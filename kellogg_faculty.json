@@ -57,10 +57,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "T.A. Pai Management Institute (TAPMI)",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/achar_chethana/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/achar_chethana/",
+    "year": 2009,
+    "major": "Management"
   },
   {
     "name": "Mark Achler",
@@ -80,7 +82,7 @@
     "highest_degree_year": 1980,
     "undergrad_school": "Purdue University",
     "undergrad_year": 1980,
-    "undergrad_major": "Social Studies Education",
+    "undergrad_major": "Social Studies Education, Minor in Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/achler_mark/"
   },
   {
@@ -120,10 +122,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Utah",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/allen_matthew/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/allen_matthew/",
+    "major": "Accounting"
   },
   {
     "name": "Torben Gustav Andersen",
@@ -204,10 +207,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Rutgers College",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/angelson_mark/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/angelson_mark/",
+    "year": 1972
   },
   {
     "name": "Nemanja Antic",
@@ -225,9 +229,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Princeton University",
     "highest_degree_year": 2015,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Queensland University of Technology",
+    "undergrad_year": 2007,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/antic_nemanja/"
   },
   {
@@ -246,10 +250,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Boston University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/aridor_guy/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/aridor_guy/",
+    "year": 2014,
+    "major": "Computer Science, Mathematics, and Economics"
   },
   {
     "name": "David Austen-Smith",
@@ -311,7 +317,7 @@
     "highest_degree_year": 2013,
     "undergrad_school": "Indiana University",
     "undergrad_year": 2008,
-    "undergrad_major": "Economics",
+    "undergrad_major": "Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/barron_daniel/"
   },
   {
@@ -330,9 +336,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Stanford University",
     "highest_degree_year": 2005,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Indian Institute Of Technology",
+    "undergrad_year": 2000,
+    "undergrad_major": "Mechanical Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/bassamboo_achal/"
   },
   {
@@ -353,7 +359,7 @@
     "highest_degree_year": 2005,
     "undergrad_school": "Hebrew University of Jerusalem",
     "undergrad_year": 1999,
-    "undergrad_major": "Economics and Business Administration",
+    "undergrad_major": null,
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/benmelech_efraim/"
   },
   {
@@ -393,10 +399,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Boston University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/berger_gail/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/berger_gail/",
+    "year": 1997,
+    "major": "Psychology and Elementary Education"
   },
   {
     "name": "Jeffrey Berk",
@@ -414,10 +422,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Kansas",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/berk_jeffrey/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/berk_jeffrey/",
+    "year": 1993,
+    "major": "Business and Accounting"
   },
   {
     "name": "David Besanko",
@@ -540,9 +550,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Oldenburg",
     "highest_degree_year": 1995,
-    "undergrad_school": "University of Oldenburg",
-    "undergrad_year": 1995,
-    "undergrad_major": "Psychology",
+    "undergrad_school": "University of Oldenberg",
+    "undergrad_year": 1982,
+    "undergrad_major": "Psychology and Computer Science",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/bockenholt_ulf/"
   },
   {
@@ -603,9 +613,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "KU Leuven",
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "KU Leuven",
     "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_major": "Commercial Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/boute_robert/"
   },
   {
@@ -624,10 +634,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of North Carolina at Chapel Hill",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/brady_william/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/brady_william/",
+    "major": "Psychology and Philosophy"
   },
   {
     "name": "Phillip Braun",
@@ -689,7 +700,7 @@
     "highest_degree_year": 2012,
     "undergrad_school": "University of California, Berkeley",
     "undergrad_year": 2006,
-    "undergrad_major": null,
+    "undergrad_major": "Industrial Engineering Operations Research",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/bray_robert/"
   },
   {
@@ -899,7 +910,7 @@
     "highest_degree_year": null,
     "undergrad_school": "Ohio Wesleyan University",
     "undergrad_year": 1978,
-    "undergrad_major": "Mathematics",
+    "undergrad_major": "Economics, Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/carpenter_gregory/"
   },
   {
@@ -918,10 +929,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Harvard College",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/carr_ellen/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/carr_ellen/",
+    "year": 1994
   },
   {
     "name": "Shana Carroll",
@@ -981,10 +993,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Columbia University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/thwaites_tessa/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/thwaites_tessa/",
+    "year": 2016,
+    "major": "Psychology"
   },
   {
     "name": "David Chen",
@@ -1002,10 +1016,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of California, Berkeley",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/chen_david/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/chen_david/",
+    "major": "Biology"
   },
   {
     "name": "Alexander Chernev",
@@ -1023,9 +1038,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Duke University",
     "highest_degree_year": 1997,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Duke University",
+    "undergrad_year": 1997,
+    "undergrad_major": "Marketing",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/chernev_alexander/"
   },
   {
@@ -1044,9 +1059,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "State University of New York, Stony Brook",
     "highest_degree_year": 1986,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Indian Institute of Technology",
+    "undergrad_year": 1981,
+    "undergrad_major": "Mechanical Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/chopra_sunil/"
   },
   {
@@ -1067,7 +1082,7 @@
     "highest_degree_year": 2016,
     "undergrad_school": "University of Toronto",
     "undergrad_year": 2004,
-    "undergrad_major": null,
+    "undergrad_major": "Engineering Science",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/chown_jillian/"
   },
   {
@@ -1107,9 +1122,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Stanford University",
     "highest_degree_year": 2007,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Stanford University",
+    "undergrad_year": 2007,
+    "undergrad_major": "East Asian Studies",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/colyvas_jeannette/"
   },
   {
@@ -1149,9 +1164,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Southern California",
     "highest_degree_year": 1987,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Indian Institute of Technology",
+    "undergrad_year": 1983,
+    "undergrad_major": "Electrical Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/contractor_noshir/"
   },
   {
@@ -1172,7 +1187,7 @@
     "highest_degree_year": 1980,
     "undergrad_school": "Haverford College",
     "undergrad_year": 1975,
-    "undergrad_major": null,
+    "undergrad_major": "History",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/copulsky_jonathan/"
   },
   {
@@ -1191,9 +1206,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Harvard University",
     "highest_degree_year": 1992,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Bocconi University, Italy",
+    "undergrad_year": 1987,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/cornelli_francesca/"
   },
   {
@@ -1235,7 +1250,7 @@
     "highest_degree_year": 1982,
     "undergrad_school": "Stanford University",
     "undergrad_year": 1977,
-    "undergrad_major": null,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/coughlan_anne/"
   },
   {
@@ -1254,9 +1269,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Columbia University",
     "highest_degree_year": 2014,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Ecole Polytechnique",
+    "undergrad_year": 2008,
+    "undergrad_major": "Applied Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/crouzet_nicolas/"
   },
   {
@@ -1277,7 +1292,7 @@
     "highest_degree_year": 2000,
     "undergrad_school": "University of Delaware",
     "undergrad_year": 1990,
-    "undergrad_major": "Physics",
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/dale_donald/"
   },
   {
@@ -1317,10 +1332,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Miami",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/dechurch-leslie/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/dechurch-leslie/",
+    "major": "Environmental Science"
   },
   {
     "name": "Erika Deserranno",
@@ -1338,10 +1354,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Université Libre de Bruxelles",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/deserranno_erika/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/deserranno_erika/",
+    "year": 2006,
+    "major": "Business Engineering"
   },
   {
     "name": "Sudhakar D. Deshmukh",
@@ -1359,9 +1377,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of California, Berkeley",
     "highest_degree_year": 1971,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Pune University, India",
+    "undergrad_year": 1964,
+    "undergrad_major": "Mechanical Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/deshmukh_sudhakar_d/"
   },
   {
@@ -1382,7 +1400,7 @@
     "highest_degree_year": 1976,
     "undergrad_school": "Fordham University",
     "undergrad_year": 1969,
-    "undergrad_major": "Philosophy",
+    "undergrad_major": "History, Philosophy",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/dewar_robert/"
   },
   {
@@ -1422,9 +1440,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Yale University",
     "highest_degree_year": 1971,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Indiana University",
+    "undergrad_year": 1964,
+    "undergrad_major": "Sociology and Psychology",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/duncan_robert/"
   },
   {
@@ -1445,7 +1463,7 @@
     "highest_degree_year": 1981,
     "undergrad_school": "State University of New York, Cortland",
     "undergrad_year": 1976,
-    "undergrad_major": null,
+    "undergrad_major": "Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/dye_ronald_a/"
   },
   {
@@ -1464,7 +1482,7 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Massachusetts Institute of Technology",
     "highest_degree_year": 1991,
-    "undergrad_school": "University of California",
+    "undergrad_school": "University of California, Davis",
     "undergrad_year": 1986,
     "undergrad_major": null,
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/eberly_janice_c/"
@@ -1485,9 +1503,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Harvard University",
     "highest_degree_year": 2009,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Moscow State University",
+    "undergrad_year": 2001,
+    "undergrad_major": "Mathematics, Department of Mechanics and Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/egorov_georgy/"
   },
   {
@@ -1508,7 +1526,7 @@
     "highest_degree_year": 1996,
     "undergrad_school": "University of California, Irvine",
     "undergrad_year": 1990,
-    "undergrad_major": null,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/ely_jeffrey/"
   },
   {
@@ -1529,7 +1547,7 @@
     "highest_degree_year": 2014,
     "undergrad_school": "Purdue University",
     "undergrad_year": null,
-    "undergrad_major": "Purdue Senior & Junior EE of the Year. National Senior EE of the Year (Eta Kappa Nu Honorary) Runner",
+    "undergrad_major": "Computer and Electrical Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/eschbach_jeffrey/"
   },
   {
@@ -1548,10 +1566,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Pennsylvania",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/eskreis-winkler_lauren/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/eskreis-winkler_lauren/",
+    "year": 2009,
+    "major": "Psychology"
   },
   {
     "name": "Andres Espitia",
@@ -1569,10 +1589,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Universidad del Rosario",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/espitia-andres/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/espitia-andres/",
+    "year": 2012,
+    "major": "Finance"
   },
   {
     "name": "Lin Fan",
@@ -1611,10 +1633,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Vassar College",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/fano_andrew/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/fano_andrew/",
+    "major": "Cognitive Science"
   },
   {
     "name": "Timothy Feddersen",
@@ -1821,9 +1844,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Stanford University",
     "highest_degree_year": 1995,
-    "undergrad_school": "University of California",
+    "undergrad_school": "University of California, Berkeley",
     "undergrad_year": 1990,
-    "undergrad_major": "highest departmental honors",
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/furfine_craig/"
   },
   {
@@ -1926,10 +1949,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Cincinnati",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/grant_benjamin/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/grant_benjamin/",
+    "major": "Mathematics"
   },
   {
     "name": "Kent Grayson",
@@ -1970,7 +1994,7 @@
     "highest_degree_year": 2010,
     "undergrad_school": "Middlebury College",
     "undergrad_year": 2010,
-    "undergrad_major": null,
+    "undergrad_major": "Economics with minors in Mathematic and Arabic",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/groh_matthew/"
   },
   {
@@ -2010,10 +2034,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Princeton University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/guryan_jonathan/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/guryan_jonathan/",
+    "year": 1996,
+    "major": "Economics"
   },
   {
     "name": "Tom Hagenberg",
@@ -2031,10 +2057,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Indiana University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/hagenberg_tom/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/hagenberg_tom/",
+    "major": "Accounting"
   },
   {
     "name": "Kathleen Hagerty",
@@ -2054,7 +2081,7 @@
     "highest_degree_year": 1985,
     "undergrad_school": "University of California, Berkeley",
     "undergrad_year": 1975,
-    "undergrad_major": null,
+    "undergrad_major": "Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/hagerty_kathleen/"
   },
   {
@@ -2096,7 +2123,7 @@
     "highest_degree_year": 2003,
     "undergrad_school": "Cornell University",
     "undergrad_year": 1997,
-    "undergrad_major": "Computer Science",
+    "undergrad_major": "Electrical Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/hartline_jason/"
   },
   {
@@ -2115,10 +2142,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Radboud University Nijmegen",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/heldring_leander/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/heldring_leander/",
+    "year": 2010,
+    "major": "Economics"
   },
   {
     "name": "Julie Hennessy",
@@ -2138,7 +2167,7 @@
     "highest_degree_year": 1982,
     "undergrad_school": "Indiana University",
     "undergrad_year": null,
-    "undergrad_major": "Psychology",
+    "undergrad_major": "Mathematics, Psychology",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/hennessy_julie/"
   },
   {
@@ -2159,7 +2188,7 @@
     "highest_degree_year": 2010,
     "undergrad_school": "Grinnell College",
     "undergrad_year": 2004,
-    "undergrad_major": "Economics",
+    "undergrad_major": "Mathematics, Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/henry_allison/"
   },
   {
@@ -2283,10 +2312,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Michigan",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/hrusovsky-anthony/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/hrusovsky-anthony/",
+    "major": "Architecture"
   },
   {
     "name": "Thomas N. Hubbard",
@@ -2325,10 +2355,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Northwestern University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/humphreys_ashlee/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/humphreys_ashlee/",
+    "year": 2003,
+    "major": "Economics and Philosophy"
   },
   {
     "name": "Daniela Hurtado Lange",
@@ -2346,10 +2378,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Pontificia Universidad Católica de Chile",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/lange_daniela/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/lange_daniela/",
+    "major": "Industrial Engineering and Mathematics"
   },
   {
     "name": "Kylie Jiwon Hwang",
@@ -2367,10 +2400,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Seoul National University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/hwang_kylie/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/hwang_kylie/",
+    "major": "Business and Economics"
   },
   {
     "name": "Maria Ibanez",
@@ -2409,10 +2443,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Iran University of Science and Technology",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/iravani_seyed/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/iravani_seyed/",
+    "major": "Industrial and System Engineering"
   },
   {
     "name": "Jeff Jacobson",
@@ -2430,7 +2465,7 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Stanford University",
     "undergrad_year": null,
     "undergrad_major": null,
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/jacobson_jeff/"
@@ -2451,9 +2486,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Carnegie Mellon University",
     "highest_degree_year": 1983,
-    "undergrad_school": "Indian Institute of Management",
-    "undergrad_year": 1972,
-    "undergrad_major": null,
+    "undergrad_school": "University of Madras",
+    "undergrad_year": 1970,
+    "undergrad_major": "Mechanical Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/jagannathan_ravi/"
   },
   {
@@ -2472,10 +2507,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Calgary",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/jakobsen_alexander/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/jakobsen_alexander/",
+    "major": "Economics"
   },
   {
     "name": "Ata Jami",
@@ -2535,10 +2571,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "London Business School",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/jolly_richard/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/jolly_richard/",
+    "major": "Business Administration (MBA)"
   },
   {
     "name": "Benjamin F. Jones",
@@ -2577,9 +2614,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Princeton University",
     "highest_degree_year": 1960,
-    "undergrad_school": "The University of Chicago",
-    "undergrad_year": 1962,
-    "undergrad_major": null,
+    "undergrad_school": "Princeton University",
+    "undergrad_year": 1960,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/juris_hervey/"
   },
   {
@@ -2600,7 +2637,7 @@
     "highest_degree_year": 1972,
     "undergrad_school": "University of California, Berkeley",
     "undergrad_year": 1967,
-    "undergrad_major": null,
+    "undergrad_major": "Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/kalai_ehud/"
   },
   {
@@ -2661,10 +2698,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Seoul National University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/kim_jung_min/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/kim_jung_min/",
+    "major": "Business and Economics"
   },
   {
     "name": "Linda Kim",
@@ -2682,10 +2720,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Northwestern University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/kim-linda/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/kim-linda/",
+    "year": 1999,
+    "major": "Engineering"
   },
   {
     "name": "Brayden King",
@@ -2747,7 +2787,7 @@
     "highest_degree_year": 1983,
     "undergrad_school": "University of Chicago",
     "undergrad_year": 1976,
-    "undergrad_major": "General Honors",
+    "undergrad_major": "Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/korajczyk_robert/"
   },
   {
@@ -2766,9 +2806,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Massachusetts Institute of Technology",
     "highest_degree_year": 1956,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "University of Chicago",
+    "undergrad_year": 1953,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/kotler_philip/"
   },
   {
@@ -2810,7 +2850,7 @@
     "highest_degree_year": 1979,
     "undergrad_school": "Lawrence University",
     "undergrad_year": 1977,
-    "undergrad_major": null,
+    "undergrad_major": "Economics, Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/kraemer_harry_m/"
   },
   {
@@ -2831,7 +2871,7 @@
     "highest_degree_year": 1981,
     "undergrad_school": "Indian Institute of Technology",
     "undergrad_year": 1975,
-    "undergrad_major": "Chennai",
+    "undergrad_major": "Electronics Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/krishnamurthi_lakshman/"
   },
   {
@@ -2850,9 +2890,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Harvard University",
     "highest_degree_year": 2013,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "McGill University",
+    "undergrad_year": 2008,
+    "undergrad_major": "Psychology",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/kteily_nour/"
   },
   {
@@ -2871,7 +2911,7 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Cornell University",
     "highest_degree_year": 2004,
-    "undergrad_school": "St. Stephen's College",
+    "undergrad_school": "St. Stephen's College, India",
     "undergrad_year": null,
     "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/labroo_aparna/"
@@ -2955,10 +2995,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": 1996,
-    "undergrad_school": null,
+    "undergrad_school": "Washington University in St. Louis",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/leinwand_paul/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/leinwand_paul/",
+    "major": "Political Science"
   },
   {
     "name": "Andrew J. Leone",
@@ -2976,9 +3017,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Pittsburgh",
     "highest_degree_year": 1997,
-    "undergrad_school": "The University of New Hampshire",
-    "undergrad_year": 1991,
-    "undergrad_major": null,
+    "undergrad_school": "Quinnipiac University",
+    "undergrad_year": 1984,
+    "undergrad_major": "Accounting",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/leone_andrew/"
   },
   {
@@ -2997,10 +3038,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Northwestern University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/letsinger-eric/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/letsinger-eric/",
+    "major": "Urban Studies and Political Science"
   },
   {
     "name": "Matthew Levatich",
@@ -3018,10 +3060,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Rensselaer Polytechnic Institute",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/levatich_matthew/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/levatich_matthew/",
+    "major": "Mechanical Engineering"
   },
   {
     "name": "Erez Levy",
@@ -3039,10 +3082,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Tel Aviv University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/levy_erez/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/levy_erez/",
+    "major": "Economics"
   },
   {
     "name": "Jose Maria Liberti",
@@ -3081,9 +3125,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Yale University",
     "highest_degree_year": 2010,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "University of Cologne",
+    "undergrad_year": 2003,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/limbrock_frank/"
   },
   {
@@ -3102,9 +3146,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Rochester",
     "highest_degree_year": 1982,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "University of Bern",
+    "undergrad_year": 1976,
+    "undergrad_major": "Economics, Operations Research",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/lys_thomas/"
   },
   {
@@ -3186,10 +3230,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Chicago",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/malladi_suraj/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/malladi_suraj/",
+    "year": 2014,
+    "major": "Mathematics and Economics"
   },
   {
     "name": "Sarit Markovich",
@@ -3207,9 +3253,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Tel Aviv University",
     "highest_degree_year": 1999,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Tel Aviv University",
+    "undergrad_year": 1993,
+    "undergrad_major": "Computer Science & Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/markovich_sarit/"
   },
   {
@@ -3228,10 +3274,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "École Polytechnique",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/martin_sebastien/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/martin_sebastien/",
+    "major": "Applied Mathematics"
   },
   {
     "name": "Niko Matouschek",
@@ -3272,7 +3319,7 @@
     "highest_degree_year": 2006,
     "undergrad_school": "Massachusetts Institute of Technology",
     "undergrad_year": 2000,
-    "undergrad_major": "Economics",
+    "undergrad_major": "Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/matsa_david_a/"
   },
   {
@@ -3293,7 +3340,7 @@
     "highest_degree_year": 2007,
     "undergrad_school": "Harvard University",
     "undergrad_year": 2002,
-    "undergrad_major": "magna cum laude with highest honors in field",
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/matvos_gregor/"
   },
   {
@@ -3356,7 +3403,7 @@
     "highest_degree_year": 1983,
     "undergrad_school": "University of Nebraska-Lincoln",
     "undergrad_year": 1978,
-    "undergrad_major": null,
+    "undergrad_major": "Economics, Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/mcguire_therese/"
   },
   {
@@ -3375,10 +3422,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Loyola University Chicago",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/mckinley-andrew/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/mckinley-andrew/",
+    "year": 2013,
+    "major": "Philosophy"
   },
   {
     "name": "Blake McShane",
@@ -3398,7 +3447,7 @@
     "highest_degree_year": 2010,
     "undergrad_school": "University of Pennsylvania",
     "undergrad_year": 2003,
-    "undergrad_major": "Mathematics",
+    "undergrad_major": null,
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/mcshane_blake/"
   },
   {
@@ -3459,7 +3508,7 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Columbia University",
     "undergrad_year": null,
     "undergrad_major": null,
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/meyer_stuart/"
@@ -3480,9 +3529,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Harvard University",
     "highest_degree_year": 2016,
-    "undergrad_school": null,
+    "undergrad_school": "Universita Commerciale Luigi Bocconi",
     "undergrad_year": 2008,
-    "undergrad_major": null,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/mezzanotti_filippo/"
   },
   {
@@ -3522,10 +3571,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Osaka City University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/mizuno_hiromichi/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/mizuno_hiromichi/",
+    "major": "Law"
   },
   {
     "name": "Pooya Molavi",
@@ -3543,10 +3593,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Sharif University of Technology",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/molavi_pooya/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/molavi_pooya/",
+    "year": 2008,
+    "major": "Electrical Engineering"
   },
   {
     "name": "Joshua Mollner",
@@ -3606,10 +3658,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Higher School of Economics (HSE)",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/morozov_ilya/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/morozov_ilya/",
+    "major": "Economics"
   },
   {
     "name": "Suzanne Muchin",
@@ -3774,10 +3827,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Stanford University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/okafor-chika/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/okafor-chika/",
+    "major": "Economics"
   },
   {
     "name": "Wojciech Olszewski",
@@ -3795,9 +3849,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Princeton University",
     "highest_degree_year": 2001,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Warsaw University",
+    "undergrad_year": 1993,
+    "undergrad_major": "Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/olszewski_wojciech/"
   },
   {
@@ -3837,8 +3891,8 @@
     "highest_degree": "MBA",
     "highest_degree_school": "Northwestern University",
     "highest_degree_year": 2002,
-    "undergrad_school": "Kellogg School of Management",
-    "undergrad_year": 2007,
+    "undergrad_school": "Northwestern University",
+    "undergrad_year": 2002,
     "undergrad_major": null,
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/ordway_philip/"
   },
@@ -3858,10 +3912,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "National University of La Plata",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/ottino_julio/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/ottino_julio/",
+    "year": 1974,
+    "major": "Chemical Engineering"
   },
   {
     "name": "Dimitris Papanikolaou",
@@ -3881,7 +3937,7 @@
     "highest_degree_year": 2007,
     "undergrad_school": "University of Piraeus",
     "undergrad_year": 2000,
-    "undergrad_major": "Finance",
+    "undergrad_major": "Economics, Finance",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/papanikolaou_dimitris/"
   },
   {
@@ -3900,10 +3956,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Democritus University of Thrace",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/paranikas_petros/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/paranikas_petros/",
+    "year": 1990,
+    "major": "Law"
   },
   {
     "name": "Homi Patel",
@@ -3921,9 +3979,9 @@
     "highest_degree": "MBA",
     "highest_degree_school": "University of Bombay",
     "highest_degree_year": null,
-    "undergrad_school": "Columbia University",
+    "undergrad_school": "University of Bombay",
     "undergrad_year": 1974,
-    "undergrad_major": "Marketing and Finance",
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/patel_homi/"
   },
   {
@@ -3942,7 +4000,7 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Fuller Theological Seminary",
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Massachusetts Institute of Technology",
     "undergrad_year": null,
     "undergrad_major": null,
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/pearce_nicholas/"
@@ -3963,10 +4021,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Virginia",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/pendergast_jennifer/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/pendergast_jennifer/",
+    "major": "Finance"
   },
   {
     "name": "Nicola Persico",
@@ -3984,10 +4043,12 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Northwestern University",
     "highest_degree_year": 1996,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/persico_nicola/"
+    "undergrad_school": "Bocconi University",
+    "undergrad_year": 1991,
+    "undergrad_major": "Economics, Universit&#224; Bocconi",
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/persico_nicola/",
+    "year": 1991,
+    "major": "Economics"
   },
   {
     "name": "Mitchell A. Petersen",
@@ -4026,7 +4087,7 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Miami",
     "undergrad_year": null,
     "undergrad_major": null,
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/phillips-matthew/"
@@ -4047,7 +4108,7 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Universitat Pompeu Fabra",
     "highest_degree_year": 2013,
-    "undergrad_school": null,
+    "undergrad_school": "Universitat Pompeu Fabra in Barcelona",
     "undergrad_year": 2008,
     "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/ponticelli_jacopo/"
@@ -4070,7 +4131,7 @@
     "highest_degree_year": 2011,
     "undergrad_school": "University of California, Los Angeles",
     "undergrad_year": 2006,
-    "undergrad_major": null,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/powell_michael/"
   },
   {
@@ -4131,7 +4192,7 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Northwestern University",
     "highest_degree_year": 2005,
-    "undergrad_school": "University of Torino",
+    "undergrad_school": "University of Torino, Italy",
     "undergrad_year": 2001,
     "undergrad_major": "Monetary and Financial Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/ravina-enrichetta/"
@@ -4154,7 +4215,7 @@
     "highest_degree_year": 1974,
     "undergrad_school": "Hebrew University of Jerusalem",
     "undergrad_year": 1967,
-    "undergrad_major": "Physics",
+    "undergrad_major": "Mathematics, Physics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/raviv_artur/"
   },
   {
@@ -4173,10 +4234,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Instituto Tecnológico Autónomo de México (ITAM)",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/rayo_luis/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/rayo_luis/",
+    "year": 1998,
+    "major": "Economics"
   },
   {
     "name": "Sergio Rebelo",
@@ -4194,9 +4257,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Rochester",
     "highest_degree_year": 1989,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Portuguese Catholic University",
+    "undergrad_year": 1981,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/rebelo_sergio/"
   },
   {
@@ -4236,9 +4299,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Edinburgh",
     "highest_degree_year": 2006,
-    "undergrad_school": "University of Cambridge",
-    "undergrad_year": 2007,
-    "undergrad_major": "Economics",
+    "undergrad_school": "University of Edinburgh",
+    "undergrad_year": 2006,
+    "undergrad_major": "Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/reich_bryony/"
   },
   {
@@ -4280,7 +4343,7 @@
     "highest_degree_year": 2009,
     "undergrad_school": "Yale University",
     "undergrad_year": 2000,
-    "undergrad_major": "distinction in both majors",
+    "undergrad_major": "Sociology and Psychology",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/rivera_lauren/"
   },
   {
@@ -4299,7 +4362,7 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Western Ontario",
     "highest_degree_year": 1993,
-    "undergrad_school": "University of British Columbia",
+    "undergrad_school": "University of British Columbia, Canada",
     "undergrad_year": 1987,
     "undergrad_major": "Canada",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/roese_neal/"
@@ -4320,7 +4383,7 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Wisconsin-Madison",
     "undergrad_year": null,
     "undergrad_major": null,
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/roling-matthew/"
@@ -4341,10 +4404,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Bocconi University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/ronchi_maddalena/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/ronchi_maddalena/",
+    "year": 2012,
+    "major": "Economics and Social Sciences"
   },
   {
     "name": "Sugata Roychowdhury",
@@ -4362,9 +4427,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Rochester",
     "highest_degree_year": 2004,
-    "undergrad_school": "Dr. B. R. Ambedkar National Institute of Technology",
+    "undergrad_school": "Dr. B. R. Ambedkar National Institute of Technology, India",
     "undergrad_year": 1994,
-    "undergrad_major": "India",
+    "undergrad_major": "Instrumentation & Control, Technology, Instrumentation & Control",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/roychowdhury_sugata/"
   },
   {
@@ -4385,7 +4450,7 @@
     "highest_degree_year": 2005,
     "undergrad_school": "University of California, Santa Cruz",
     "undergrad_year": 1998,
-    "undergrad_major": null,
+    "undergrad_major": "Psychology",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/rucker_derek_d/"
   },
   {
@@ -4404,10 +4469,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Italian University (unspecified)",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/saitto-roberto/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/saitto-roberto/",
+    "major": "Economics"
   },
   {
     "name": "Yuval Salant",
@@ -4425,9 +4491,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Stanford University",
     "highest_degree_year": 2008,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Hebrew University of Jerusalem",
+    "undergrad_year": 2000,
+    "undergrad_major": "Computer Science",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/salant_yuval/"
   },
   {
@@ -4446,9 +4512,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Pennsylvania",
     "highest_degree_year": 1996,
-    "undergrad_school": null,
+    "undergrad_school": "Pontificia Universidade Catolica, Brazil",
     "undergrad_year": 1986,
-    "undergrad_major": "Brazil",
+    "undergrad_major": "Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/sandroni_alvaro/"
   },
   {
@@ -4509,9 +4575,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Northwestern University",
     "highest_degree_year": 1997,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Harvey Mudd College",
+    "undergrad_year": 1992,
+    "undergrad_major": "Mathematics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/saraniti_brett/"
   },
   {
@@ -4551,9 +4617,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Pennsylvania",
     "highest_degree_year": 1993,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Indian Institute of Technology",
+    "undergrad_year": 1985,
+    "undergrad_major": "Electrical Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/sawhney_mohanbir/"
   },
   {
@@ -4572,10 +4638,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Princeton University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/schill_michael/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/schill_michael/",
+    "year": 1980,
+    "major": "Public Policy"
   },
   {
     "name": "Molly Schnell",
@@ -4593,10 +4661,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Chicago",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/schnell-molly/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/schnell-molly/",
+    "year": 2011,
+    "major": "Mathematics, Economics, and Statistics"
   },
   {
     "name": "David Schonthal",
@@ -4656,10 +4726,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Brigham Young University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/seegmiller_bryan/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/seegmiller_bryan/",
+    "year": 2016,
+    "major": "Economics and Mathematics"
   },
   {
     "name": "Birju Shah",
@@ -4677,9 +4749,9 @@
     "highest_degree": "MBA",
     "highest_degree_school": "Northwestern University",
     "highest_degree_year": 2005,
-    "undergrad_school": "MIT Sloan School of Business",
-    "undergrad_year": 2012,
-    "undergrad_major": null,
+    "undergrad_school": "Northwestern University",
+    "undergrad_year": 2005,
+    "undergrad_major": "Industrial Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/shah_birju/"
   },
   {
@@ -4698,9 +4770,9 @@
     "highest_degree": "MBA",
     "highest_degree_school": "Northwestern University",
     "highest_degree_year": 1982,
-    "undergrad_school": "Northwestern University",
-    "undergrad_year": 1982,
-    "undergrad_major": null,
+    "undergrad_school": "Brown University",
+    "undergrad_year": 1974,
+    "undergrad_major": "Biology",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/shalowitz-joel/"
   },
   {
@@ -4761,9 +4833,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Queen's University",
     "highest_degree_year": 2004,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "Queen's University",
+    "undergrad_year": 2004,
+    "undergrad_major": "Commerce",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/sinkinson_michael/"
   },
   {
@@ -4784,7 +4856,7 @@
     "highest_degree_year": 1992,
     "undergrad_school": "Imperial College of Science and Technology",
     "undergrad_year": 1986,
-    "undergrad_major": "First Class Honors",
+    "undergrad_major": "Electrical Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/skiadas_constantinos/"
   },
   {
@@ -4803,10 +4875,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Princeton University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/smilowitz_karen/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/smilowitz_karen/",
+    "year": 1995,
+    "major": "Civil Engineering and Operations Research"
   },
   {
     "name": "Jörg Spenkuch",
@@ -4826,7 +4900,7 @@
     "highest_degree_year": 2013,
     "undergrad_school": "University of St. Gallen (Switzerland)",
     "undergrad_year": 2007,
-    "undergrad_major": "Business Administration",
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/spenkuch_jorg/"
   },
   {
@@ -4847,7 +4921,7 @@
     "highest_degree_year": 1984,
     "undergrad_school": "National University of Ireland",
     "undergrad_year": 1984,
-    "undergrad_major": "Education & Geography",
+    "undergrad_major": null,
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/spillane_james_p/"
   },
   {
@@ -4889,7 +4963,7 @@
     "highest_degree_year": 1990,
     "undergrad_school": "Indian Institute of Management",
     "undergrad_year": 1979,
-    "undergrad_major": "Economics",
+    "undergrad_major": "Finance, Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/sridharan_swaminathan/"
   },
   {
@@ -5097,10 +5171,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Santa Clara University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/teeny_jacob/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/teeny_jacob/",
+    "year": 2012,
+    "major": "Psychology and Philosophy"
   },
   {
     "name": "Edoardo Teso",
@@ -5162,7 +5238,7 @@
     "highest_degree_year": 1994,
     "undergrad_school": "Wabash College and Indiana University",
     "undergrad_year": 1984,
-    "undergrad_major": "MAth",
+    "undergrad_major": "Math",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/tiller_emerson/"
   },
   {
@@ -5181,10 +5257,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Lomonosov Moscow State University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/timoshenko_artem/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/timoshenko_artem/",
+    "year": 2013,
+    "major": "Applied Mathematics and Computer Science"
   },
   {
     "name": "Viktor Todorov",
@@ -5246,7 +5324,7 @@
     "highest_degree_year": 2016,
     "undergrad_school": "University of Pennsylvania",
     "undergrad_year": 2009,
-    "undergrad_major": "Economics + Math + Hispanic Studies",
+    "undergrad_major": "Economics, Mathematics, And Hispanic Studies",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/tuchman_anna/"
   },
   {
@@ -5307,9 +5385,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Stanford University",
     "highest_degree_year": 1995,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "University KU Leuven, Belgium",
+    "undergrad_year": 1989,
+    "undergrad_major": "Applied Sciences",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/vanmieghem_jan_a/"
   },
   {
@@ -5349,10 +5427,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Illinois at Urbana-Champaign",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/vivian_stephen/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/vivian_stephen/",
+    "major": "General Engineering"
   },
   {
     "name": "Brooke Vuckovic",
@@ -5414,7 +5493,7 @@
     "highest_degree_year": 1996,
     "undergrad_school": "Vanderbilt University",
     "undergrad_year": 1990,
-    "undergrad_major": null,
+    "undergrad_major": "Economics",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/walther_beverly/"
   },
   {
@@ -5475,10 +5554,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Michigan",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/wang_lulu/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/wang_lulu/",
+    "year": 2016,
+    "major": "Economics and Mathematics"
   },
   {
     "name": "Adam Waytz",
@@ -5559,10 +5640,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Harvard University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/wernerfelt_nils/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/wernerfelt_nils/",
+    "major": "Mathematics"
   },
   {
     "name": "Regina Wittenberg Moerman",
@@ -5580,10 +5662,12 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Hebrew University of Jerusalem",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/wittenberg_regina/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/wittenberg_regina/",
+    "year": 1996,
+    "major": "Accounting and Economics"
   },
   {
     "name": "Craig Wortmann",
@@ -5643,9 +5727,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "University of Pennsylvania",
     "highest_degree_year": 1986,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "University of Pennsylvania",
+    "undergrad_year": 1986,
+    "undergrad_major": "Organization and Strategy",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/zajac_edward/"
   },
   {
@@ -5664,9 +5748,9 @@
     "highest_degree": "PhD",
     "highest_degree_school": "Massachusetts Institute of Technology",
     "highest_degree_year": 1996,
-    "undergrad_school": null,
-    "undergrad_year": null,
-    "undergrad_major": null,
+    "undergrad_school": "University of Karlsruhe",
+    "undergrad_year": 1992,
+    "undergrad_major": "Business Engineering",
     "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/zettelmeyer_florian/"
   },
   {
@@ -5685,9 +5769,11 @@
     "highest_degree": null,
     "highest_degree_school": null,
     "highest_degree_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Stanford University",
     "undergrad_year": null,
     "undergrad_major": null,
-    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/zhang-letian/"
+    "full_url": "https://kellogg.northwestern.edu/academics-research/faculty/zhang-letian/",
+    "year": 2011,
+    "major": "Mathematics"
   }
 ]

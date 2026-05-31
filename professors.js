@@ -37,7 +37,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "T.A. Pai Management Institute (TAPMI)",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/c/chethana-achar/chethana-achar-kellogg-faculty-874x728.jpg?rev=ff14abc066594a15a8fb37968ad024db&sc_lang=en&w=250&hash=62C80921A07949A5D9F1A0D42DDC5401"
   },
@@ -50,7 +50,7 @@ const PROFESSORS = [
     "highest_degree_school": "Purdue University",
     "undergrad_year": 1980,
     "undergrad_school": "Purdue University",
-    "undergrad_major": "Social Studies Education",
+    "undergrad_major": "Social Studies Education, Minor in Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/mark-achler/mark-achler-kellogg-faculty-874x728.jpg?rev=3b41cd05bedf417687f184bfdecd89f2&sc_lang=en&w=250&hash=D237C91BCA136F31A43D4E683C7B3D0E"
   },
   {
@@ -73,7 +73,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Utah",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/matthew-allen/matthew-allen-kellogg-faculty-874x728.jpg?rev=c54e1b51513447d7888fb1a6c1ec85de&sc_lang=en&w=250&hash=DAEEC227BB56537152448E50B136202B"
   },
@@ -121,7 +121,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Rutgers College",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/faculty/headshot/angelson_m.jpg?rev=3d286777676d458f9cf7567221fc4bac&sc_lang=en&w=250&hash=4052CF669B9D32254FBB9EAF9B0C6938"
   },
@@ -132,9 +132,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2015,
     "highest_degree_school": "Princeton University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 2007,
+    "undergrad_school": "Queensland University of Technology",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/n/nemanja-antic/nemanja-antic-kellogg-faculty-874x728.jpg?rev=fbb5baa1d67c4a5fb742b4d81f7ef7e3&sc_lang=en&w=250&hash=6471ED3F628C9FFF65F12FDE88B27358"
   },
   {
@@ -145,7 +145,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Boston University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/g/guy-aridor/guy-aridor-kellogg-faculty-874x728.jpg?rev=def4a562115445869e9b7acd86d51b58&sc_lang=en&w=250&hash=1163B9E9D0A880B48DE735795B04FE5B"
   },
@@ -182,7 +182,7 @@ const PROFESSORS = [
     "highest_degree_school": "Massachusetts Institute of Technology",
     "undergrad_year": 2008,
     "undergrad_school": "Indiana University",
-    "undergrad_major": "Economics",
+    "undergrad_major": "Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/d/daniel-barron/daniel-barron-kellogg-faculty-874x728.jpg?rev=c9ba5a3a08584571902ae96864064d78&sc_lang=en&w=250&hash=4C83ECB45C37CDA34CAE50A98F2B858C"
   },
   {
@@ -192,9 +192,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2005,
     "highest_degree_school": "Stanford University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 2000,
+    "undergrad_school": "Indian Institute Of Technology",
+    "undergrad_major": "Mechanical Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/achal-bassamboo/achal-bassamboo-kellogg-faculty-874x728.jpg?rev=66e6fbe26bfc451d92123bc4a5310519&sc_lang=en&w=250&hash=9F39E3E6F25F0BB5D671362C33FD7910"
   },
   {
@@ -206,7 +206,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of Chicago",
     "undergrad_year": 1999,
     "undergrad_school": "Hebrew University of Jerusalem",
-    "undergrad_major": "Economics and Business Administration",
+    "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/e/efraim-benmelech/efraim-benmelech-kellogg-faculty-874x728.jpg?rev=ff4feff5c6a1411989948b5e7b10081a&sc_lang=en&w=250&hash=47FEC3DAED97DA03CE9C41E80EB4C775"
   },
   {
@@ -229,7 +229,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Boston University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/g/gail-berger/gail-berger-kellogg-faculty-874x728.jpg?rev=5cc5e9039009454f977daef9781fc264&sc_lang=en&w=250&hash=0BC75AF77EAD22842434312A7866BF48"
   },
@@ -241,7 +241,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Kansas",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jeffrey-berk/jeffrey-berk-kellogg-faculty-874x728.jpg?rev=234e8aa0739b4dbd8cb21b39970069bd&sc_lang=en&w=250&hash=1FFCEBA33B0C8799AABBF0F1EF46097D"
   },
@@ -312,9 +312,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1995,
     "highest_degree_school": "University of Oldenburg",
-    "undergrad_year": 1995,
-    "undergrad_school": "University of Oldenburg",
-    "undergrad_major": "Psychology",
+    "undergrad_year": 1982,
+    "undergrad_school": "University of Oldenberg",
+    "undergrad_major": "Psychology and Computer Science",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/u/ulf-bockenholt/ulf-bockenholt-kellogg-faculty-874x728.jpg?rev=b8fc12737d3943eda386a92d1bddd992&sc_lang=en&w=250&hash=E50C4F6707E945B2FB01E084AFDD6C10"
   },
   {
@@ -349,8 +349,8 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": "KU Leuven",
     "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_school": "KU Leuven",
+    "undergrad_major": "Commercial Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/r/robert-boute/robert-boute-kellogg-faculty-874x728.jpg?rev=31eacbcbc7cd495a90ccb4a542a6ed47&sc_lang=en&w=250&hash=3E1C50BAE4A77E10188BFE8002A86E02"
   },
   {
@@ -361,7 +361,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of North Carolina at Chapel Hill",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/w/william-brady/william-brady-kellogg-faculty-874x728.jpg?rev=d636e93b72c24547b8d2d832994f731b&sc_lang=en&w=250&hash=899E0EA32CBADB5F8406FAA5717AD71D"
   },
@@ -398,7 +398,7 @@ const PROFESSORS = [
     "highest_degree_school": "Stanford University",
     "undergrad_year": 2006,
     "undergrad_school": "University of California, Berkeley",
-    "undergrad_major": null,
+    "undergrad_major": "Industrial Engineering Operations Research",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/r/robert-bray/robert-bray-kellogg-faculty-874x728.jpg?rev=21db15f7f2ce47449aac4ff7e53f045e&sc_lang=en&w=250&hash=9C5F89225A0BC5EE78170C0703489A6B"
   },
   {
@@ -518,7 +518,7 @@ const PROFESSORS = [
     "highest_degree_school": null,
     "undergrad_year": 1978,
     "undergrad_school": "Ohio Wesleyan University",
-    "undergrad_major": "Mathematics",
+    "undergrad_major": "Economics, Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/g/gregory-carpenter/gregory-carpenter-kellogg-faculty-874x728.jpg?rev=083adef27552490a96ae90d796410b56&sc_lang=en&w=250&hash=69B06829289457D1ECCCB17CF5FD4AD9"
   },
   {
@@ -529,7 +529,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Harvard College",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/e/ellen-carr/ellen-carr-headshot-sept-2022/ellen-carr-kellogg-faculty-headshot-medium-874x729.jpg?rev=219099ff218b42da8674cbb2ea20602c&sc_lang=en&w=250&hash=612DDD4D35B3203ED62950C85DBC1EC4"
   },
@@ -565,7 +565,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Columbia University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/t/tessa-charlesworth/kellogg-faculty-tessa-charlesworth-874x728.jpg?rev=b2319420e61940a79adf9f29470cf5a3&sc_lang=en&w=250&hash=83B5B926798506B1FB06C260C481580A"
   },
@@ -577,7 +577,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of California, Berkeley",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/d/david-chen/david-chen-smith-kellogg-faculty-874x728.jpg?rev=e0939a331aa94ab2ab17e0146bfa2e60&sc_lang=en&w=250&hash=71538B357E91495F6D264365590CDB7C"
   },
@@ -588,9 +588,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1997,
     "highest_degree_school": "Duke University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1997,
+    "undergrad_school": "Duke University",
+    "undergrad_major": "Marketing",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/alexander-chernev/alexander-chernev-kellogg-faculty-874x728.jpg?rev=e8bcb8f46732488c95b13de29c89d90d&sc_lang=en&w=250&hash=0CEE73074ACD5D95D4F3AE069C7FFC3B"
   },
   {
@@ -600,9 +600,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1986,
     "highest_degree_school": "State University of New York, Stony Brook",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1981,
+    "undergrad_school": "Indian Institute of Technology",
+    "undergrad_major": "Mechanical Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/sunil-chopra/sunil-chopra-kellogg-faculty-874x728.jpg?rev=ff478ec1531244d8a85010a8e3ca8a29&sc_lang=en&w=250&hash=B4C9D85C320ACB0C496477E8BD9F8987"
   },
   {
@@ -614,7 +614,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of Toronto",
     "undergrad_year": 2004,
     "undergrad_school": "University of Toronto",
-    "undergrad_major": null,
+    "undergrad_major": "Engineering Science",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jillian-chown/jillian-chown-kellogg-faculty-874x728.jpg?rev=2ae39181e20b458bbe9826396b221c91&sc_lang=en&w=250&hash=0AD42152F906EF2AF2D6A5DB4AD26518"
   },
   {
@@ -636,9 +636,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2007,
     "highest_degree_school": "Stanford University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 2007,
+    "undergrad_school": "Stanford University",
+    "undergrad_major": "East Asian Studies",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jeannette-colyvas/jeannette-colyvas-kellogg-faculty-874x728.jpg?rev=e1d975f7b55b4f3e82e7652a045354bf&sc_lang=en&w=250&hash=0D93C46A9E76E85C0359247A6FAC6753"
   },
   {
@@ -660,9 +660,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1987,
     "highest_degree_school": "University of Southern California",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1983,
+    "undergrad_school": "Indian Institute of Technology",
+    "undergrad_major": "Electrical Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/n/noshir-contractor/noshir-contractor-kellogg-faculty-874x728.jpg?rev=0a2ac438c3644b9eaf1569959486c649&sc_lang=en&w=250&hash=D7ECBB0EC5C9DBA55851655CEFDB5ACD"
   },
   {
@@ -674,7 +674,7 @@ const PROFESSORS = [
     "highest_degree_school": "Stanford University",
     "undergrad_year": 1975,
     "undergrad_school": "Haverford College",
-    "undergrad_major": null,
+    "undergrad_major": "History",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jonathan-copulsky/jonathan-copulsky-kellogg-faculty-874x728.jpg?rev=5d2b7f3ea8bc4ab28926334c2d548400&sc_lang=en&w=250&hash=182B3A5FDDD6671E15D2CE90BFDF02D7"
   },
   {
@@ -684,9 +684,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1992,
     "highest_degree_school": "Harvard University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1987,
+    "undergrad_school": "Bocconi University, Italy",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/f/francesca-cornelli/231106_northwestern_francescacornelli_828_v2_cropped874x728.jpg?rev=4fe2954eb9f04cc7886d8798b65fbb06&sc_lang=en&w=250&hash=4854F407A5443C79FD96B28404A85048"
   },
   {
@@ -710,7 +710,7 @@ const PROFESSORS = [
     "highest_degree_school": "Stanford University",
     "undergrad_year": 1977,
     "undergrad_school": "Stanford University",
-    "undergrad_major": null,
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/anne-coughlan/anne-coughlan-kellogg-faculty-874x728.jpg?rev=7b02fee5883945018d124876bd8d23e3&sc_lang=en&w=250&hash=D4D0BA054851927D6092560E669E7552"
   },
   {
@@ -720,9 +720,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2014,
     "highest_degree_school": "Columbia University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 2008,
+    "undergrad_school": "Ecole Polytechnique",
+    "undergrad_major": "Applied Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/n/nicolas-crouzet/nicolas-crouzet-kellogg-faculty-874x728.jpg?rev=5c43c10aa103491e9a4e7b4ad3a9f97c&sc_lang=en&w=250&hash=29EB9EF0ADE4ECB1F0D5C9CDB2C0DC7E"
   },
   {
@@ -734,7 +734,7 @@ const PROFESSORS = [
     "highest_degree_school": "Princeton University",
     "undergrad_year": 1990,
     "undergrad_school": "University of Delaware",
-    "undergrad_major": "Physics",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/d/donald-dale/donald-dale-kellogg-faculty-874x728.jpg?rev=1f144afb82d940358d1a41f9f9d6bb29&sc_lang=en&w=250&hash=7ABE91DCF2940606C8C0C051557F03DA"
   },
   {
@@ -757,7 +757,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Miami",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/l/leslie-dechurch/leslie-dechurch-kellogg-headshot---small---342x285_m.jpg?rev=ddc067674f5f47388482ff2ec0f733fe&sc_lang=en&w=250&hash=6DC3894BE9566290C5E82AB360E02A47"
   },
@@ -769,7 +769,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Université Libre de Bruxelles",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/e/erika-deserranno/erika-deserranno-kellogg-faculty-874x728.jpg?rev=a9509b1b0c244bdb9e90a707247dd2bb&sc_lang=en&w=250&hash=1A5EC5344F08F1A691CBA0A0217C298A"
   },
@@ -780,9 +780,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1971,
     "highest_degree_school": "University of California, Berkeley",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1964,
+    "undergrad_school": "Pune University, India",
+    "undergrad_major": "Mechanical Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/sudhakar-deshmukh/sudhakar-deshmukh-kellogg-faculty-874x728.jpg?rev=2834f9fa6a2f4804a57b7cf4dcfea284&sc_lang=en&w=250&hash=0916AFCC91CFEC152DFF9EFF0A049AF8"
   },
   {
@@ -794,7 +794,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of Wisconsin - Madison",
     "undergrad_year": 1969,
     "undergrad_school": "Fordham University",
-    "undergrad_major": "Philosophy",
+    "undergrad_major": "History, Philosophy",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/r/robert-dewar/robert-boute-kellogg-faculty-874x728.jpg?rev=087993d4329b4b41a5e846b10a3fa0f1&sc_lang=en&w=250&hash=8BF893A893879B8CB1FA18D50B3A57DA"
   },
   {
@@ -816,9 +816,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1971,
     "highest_degree_school": "Yale University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1964,
+    "undergrad_school": "Indiana University",
+    "undergrad_major": "Sociology and Psychology",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/r/robert-duncan/robert-duncan-kellogg-faculty-874x728.jpg?rev=d53204ff9b2a4a08a33dca86cbc8b264&sc_lang=en&w=250&hash=71F22105C636E819668934D6B721D910"
   },
   {
@@ -830,7 +830,7 @@ const PROFESSORS = [
     "highest_degree_school": "Carnegie Mellon University",
     "undergrad_year": 1976,
     "undergrad_school": "State University of New York, Cortland",
-    "undergrad_major": null,
+    "undergrad_major": "Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/r/ronald-dye/ronald-dye-kellogg-faculty-874x728.jpg?rev=dd60649bfcb24de0a954677cbab4cf37&sc_lang=en&w=250&hash=38CB3429FE1D0538794FDB7FB6F8454C"
   },
   {
@@ -841,7 +841,7 @@ const PROFESSORS = [
     "highest_degree_year": 1991,
     "highest_degree_school": "Massachusetts Institute of Technology",
     "undergrad_year": 1986,
-    "undergrad_school": "University of California",
+    "undergrad_school": "University of California, Davis",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/the-experience/people/kellogg-leadership/03-janice-eberly/eberly-janice-874x729.jpg?rev=3cacc03db6674f109729b1cff2ac8feb&sc_lang=en&w=250&hash=770627C4F4CC04F2186E6D9BA59A497A"
   },
@@ -852,9 +852,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2009,
     "highest_degree_school": "Harvard University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 2001,
+    "undergrad_school": "Moscow State University",
+    "undergrad_major": "Mathematics, Department of Mechanics and Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/g/georgy-egorov/georgy-egorov-kellogg-faculty-874x728.jpg?rev=1607f1712fcb4c54825c702cfaafa318&sc_lang=en&w=250&hash=51D6669DB382AD85FD98205207BA58AE"
   },
   {
@@ -866,7 +866,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of California, Berkeley",
     "undergrad_year": 1990,
     "undergrad_school": "University of California, Irvine",
-    "undergrad_major": null,
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jeffrey-ely/jeffrey-ely-kellogg-faculty-874x728.jpg?rev=97cc33a8c33049ea8cb2b871c534e50b&sc_lang=en&w=250&hash=6802B3A1CD1BB6A9495ADE6E78772879"
   },
   {
@@ -878,7 +878,7 @@ const PROFESSORS = [
     "highest_degree_school": "Northwestern University",
     "undergrad_year": null,
     "undergrad_school": "Purdue University",
-    "undergrad_major": "Purdue Senior & Junior EE of the Year. National Senior EE of the Year (Eta Kappa Nu Honorary) Runner",
+    "undergrad_major": "Computer and Electrical Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jeffrey-eschbach/jeffrey-eschbach-kellogg-faculty-874x728.jpg?rev=b5f56b5efbdf462bb4a253c5873e1001&sc_lang=en&w=250&hash=2897298D6A4A915E93070B9F84B1059A"
   },
   {
@@ -889,7 +889,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Pennsylvania",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/l/lauren-eskreis-winkler/lauren-eskreis-winkler-kellogg-faculty-874x728.jpg?rev=20eab37b3e984633a6e213defa814039&sc_lang=en&w=250&hash=22697E44BF26D2DA4A256DA826049979"
   },
@@ -901,7 +901,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Universidad del Rosario",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/andres-espitia/andres-espitia-kellogg-headshot/headshot---medium---874x729_m.jpg?rev=6c6317efc96d4c16a82cd7afbaac47e8&sc_lang=en&w=250&hash=CBDB717F293E48EC330210672C6C1DD2"
   },
@@ -925,7 +925,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Vassar College",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/andrew-fano/andrew-fano-kellogg-headshot-874x728.jpg?rev=ec3905c1465349cdb5889e6b0f2b5820&sc_lang=en&w=250&hash=5723D8ABA123698740ABAEF1ACF0EEE5"
   },
@@ -1045,8 +1045,8 @@ const PROFESSORS = [
     "highest_degree_year": 1995,
     "highest_degree_school": "Stanford University",
     "undergrad_year": 1990,
-    "undergrad_school": "University of California",
-    "undergrad_major": "highest departmental honors",
+    "undergrad_school": "University of California, Berkeley",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/c/craig-furfine/craig-furfine-kellogg-faculty-874x728.jpg?rev=55c62bd1f37b4694aea2d2f4cb813625&sc_lang=en&w=250&hash=976B47E491C5CC14E700928182926FF2"
   },
   {
@@ -1105,7 +1105,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Cincinnati",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/b/benjamin-grant/benjamin-grant-kellogg-faculty-874x728.jpg?rev=aa96e28d4af44450a0351490979d6e03&sc_lang=en&w=250&hash=7818F468A1C0897BCDB8C97B68D85F55"
   },
@@ -1130,7 +1130,7 @@ const PROFESSORS = [
     "highest_degree_school": "Middlebury College",
     "undergrad_year": 2010,
     "undergrad_school": "Middlebury College",
-    "undergrad_major": null,
+    "undergrad_major": "Economics with minors in Mathematic and Arabic",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/matt-groh/kellogg-faculty-matt-groh/headshot---medium---874x729_m.jpg?rev=11bb304f13c2460f9563f208d3a363be&sc_lang=en&w=250&hash=8AE4E4DAD4E097B5DB37C5C439A0ABF7"
   },
   {
@@ -1153,7 +1153,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Princeton University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jonathan-guryan/jonathan-guryan-kellogg-faculty-874x728.jpg?rev=8e5252f5b254490ca788eae2be156d64&sc_lang=en&w=250&hash=C9D67408E2E8E2F14E3D786A896B0C64"
   },
@@ -1165,7 +1165,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Indiana University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/t/tom-hagenberg/tom-hagenberg-kellogg-faculty-874x728.jpg?rev=15284a664a544c15ad256479cadd65de&sc_lang=en&w=250&hash=92C6BA8B5C503B774871427EC7C31C3C"
   },
@@ -1178,7 +1178,7 @@ const PROFESSORS = [
     "highest_degree_school": "Stanford University",
     "undergrad_year": 1975,
     "undergrad_school": "University of California, Berkeley",
-    "undergrad_major": null,
+    "undergrad_major": "Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/k/kathleen-hagerty/kathleen-hagerty-kellogg-faculty-874x728.jpg?rev=8361c65f4a2d4897bd89736482fe1d70&sc_lang=en&w=250&hash=59621B3E3617A95D8E682C5201450E53"
   },
   {
@@ -1202,7 +1202,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of Washington",
     "undergrad_year": 1997,
     "undergrad_school": "Cornell University",
-    "undergrad_major": "Computer Science",
+    "undergrad_major": "Electrical Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jason-hartline/jason-hartline-kellogg-faculty-874x728.jpg?rev=8e8f2ad6c01a4f418a6f92db11facf26&sc_lang=en&w=250&hash=839E57337C4690C296DCBA741A51621E"
   },
   {
@@ -1213,7 +1213,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Radboud University Nijmegen",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/l/leander-heldring/leander-heldring-kellogg-faculty-874x728.jpg?rev=9c5e87fc68d94ef39e30afd32f75bc92&sc_lang=en&w=250&hash=9FB74C0FBEED90E6D2E4757FF7F4E9D2"
   },
@@ -1226,7 +1226,7 @@ const PROFESSORS = [
     "highest_degree_school": "Northwestern University",
     "undergrad_year": null,
     "undergrad_school": "Indiana University",
-    "undergrad_major": "Psychology",
+    "undergrad_major": "Mathematics, Psychology",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/julie-hennessy/julie-hennessy-kellogg-faculty-874x728.jpg?rev=62340fe5841f4e93b7af9b259b7233e2&sc_lang=en&w=250&hash=7F391D81A9203921B7CAD30A71AD62F2"
   },
   {
@@ -1238,7 +1238,7 @@ const PROFESSORS = [
     "highest_degree_school": "Kellogg School of Management",
     "undergrad_year": 2004,
     "undergrad_school": "Grinnell College",
-    "undergrad_major": "Economics",
+    "undergrad_major": "Mathematics, Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/allison-henry/allison-henry-kellogg-faculty-874x728.jpg?rev=1472baf7c1934555acd37d8ab4ab6f62&sc_lang=en&w=250&hash=4FB0337E0BE4F08B04B4BA3FCD987C22"
   },
   {
@@ -1309,7 +1309,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Michigan",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/anthony-hrusovsky/anthony-hrusovsky-kellogg-headshot/headshot---small---342x285_m.jpg?rev=0a3b142cd30f4f54b7ad1588d3ef997c&sc_lang=en&w=250&hash=C299D161639810F14D46551BF9844688"
   },
@@ -1333,7 +1333,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Northwestern University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/ashlee-humphreys/ashlee-humphreys-kellogg-faculty-874x728.jpg?rev=efda73ebb8a04c79afe2a2f9efe2f0d6&sc_lang=en&w=250&hash=B8D100BFF3274A422D0D87B7B58BA2EE"
   },
@@ -1345,7 +1345,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Pontificia Universidad Católica de Chile",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/d/daniela-lange/kellogg-faculty-daniela-lange-874x728.jpg?rev=9d5e219b4153478580332778a4993004&sc_lang=en&w=250&hash=73014C4F15DFE1ECB04FC36D2F7C1862"
   },
@@ -1357,7 +1357,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Seoul National University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/k/kylie-hwang/kylie-hwang-kellogg-faculty.jpg?rev=ae3fe50c2bf141b39875c852065a0e1d&sc_lang=en&w=250&hash=45ACD956AC6EA6F18E0FD68B9365724D"
   },
@@ -1381,7 +1381,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Iran University of Science and Technology",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/seyed-iravani/seyed-iravani-kellogg-faculty-874x728.jpg?rev=dc9653286df840a28ed5a4c7112fc793&sc_lang=en&w=250&hash=7A2B6E99AA5DC9E7419806ACF7A9EC15"
   },
@@ -1393,7 +1393,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Stanford University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jeff-jacobson/kellogg-headshot-jeff-jacobson-874x728.jpg?rev=502ba38dbc39434895ea92e6eb1d17e2&sc_lang=en&w=250&hash=68F39AE9CCDD990F6D48984FB06FE55F"
   },
@@ -1404,9 +1404,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1983,
     "highest_degree_school": "Carnegie Mellon University",
-    "undergrad_year": 1972,
-    "undergrad_school": "Indian Institute of Management",
-    "undergrad_major": null,
+    "undergrad_year": 1970,
+    "undergrad_school": "University of Madras",
+    "undergrad_major": "Mechanical Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/r/ravi-jagannathan/ravi-jagannathan-kellogg-faculty-874x728.jpg?rev=b883fa7a37f74d40862f1634617d317a&sc_lang=en&w=250&hash=9A9B35D93D4AD775A5EB77F5037B6B89"
   },
   {
@@ -1417,7 +1417,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Calgary",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/alexander-jakobsen/alexander-jakobsen-kellogg-faculty-874x728.jpg?rev=fd3393a8ce8c4e36838b99a99486ffb1&sc_lang=en&w=250&hash=D536F0765AF28348EDF8F877CFFF2939"
   },
@@ -1453,7 +1453,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "London Business School",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/r/richard-jolly/richard-jolly-kellogg-faculty-874x728.jpg?rev=c28eb94f22c04121b5239a37c709ed4a&sc_lang=en&w=250&hash=091C93CFE9C8D4E837558C0CF9D879B4"
   },
@@ -1476,9 +1476,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1960,
     "highest_degree_school": "Princeton University",
-    "undergrad_year": 1962,
-    "undergrad_school": "The University of Chicago",
-    "undergrad_major": null,
+    "undergrad_year": 1960,
+    "undergrad_school": "Princeton University",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/h/hervey-juris/hervey-juris-kellogg-faculty-874x728.jpg?rev=96e1cd56861c45a08d789263a7e6b9a0&sc_lang=en&w=250&hash=955720CDB285CF9E18CEB2C9FAF6E3BF"
   },
   {
@@ -1490,7 +1490,7 @@ const PROFESSORS = [
     "highest_degree_school": "Cornell University",
     "undergrad_year": 1967,
     "undergrad_school": "University of California, Berkeley",
-    "undergrad_major": null,
+    "undergrad_major": "Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/e/ehud-kalai/ehud-kalai-kellogg-faculty-874x728.jpg?rev=1efdea08cb534b84b0d78fd3fbe5813b&sc_lang=en&w=250&hash=4B49FB77882D167337179AD9A019954D"
   },
   {
@@ -1525,7 +1525,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Seoul National University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jung-min-kim/jung-min-kim-kellogg-faculty-874x728.jpg?rev=2b05acd771234fc19283c22baf9f0580&sc_lang=en&w=250&hash=D57AA76A4FB203768D34B3B1ED8A9D16"
   },
@@ -1537,7 +1537,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Northwestern University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/l/linda-kim/linda-kim-kellogg-faculty-headshot/headshot---medium---874x729_m.jpg?rev=dc6aab6ddd904182b790ba3631c7f292&sc_lang=en&w=250&hash=96B6D952D61C480306116079AA6887A0"
   },
@@ -1574,7 +1574,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of Chicago",
     "undergrad_year": 1976,
     "undergrad_school": "University of Chicago",
-    "undergrad_major": "General Honors",
+    "undergrad_major": "Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/r/robert-korajczyk/robert-korajczyk-kellogg-faculty-874x728.jpg?rev=f6425cb4cd5e4d999cbecf6e32a4264b&sc_lang=en&w=250&hash=40BF49E680916B1CD30409F6761B34AB"
   },
   {
@@ -1584,9 +1584,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1956,
     "highest_degree_school": "Massachusetts Institute of Technology",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1953,
+    "undergrad_school": "University of Chicago",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/p/philip-kotler/philip-kotler-kellogg-faculty-874x728.jpg?rev=1528c4d5024a4e57bfe4ba0cb97aa71c&sc_lang=en&w=250&hash=D3B578D828BBF83AAA8F3C32EB62E7C7"
   },
   {
@@ -1610,7 +1610,7 @@ const PROFESSORS = [
     "highest_degree_school": "Northwestern University",
     "undergrad_year": 1977,
     "undergrad_school": "Lawrence University",
-    "undergrad_major": null,
+    "undergrad_major": "Economics, Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/h/harry-kraemer/harry-kraemer-kellogg-faculty-874x728.jpg?rev=2318fb6c64454e4db1fd17c406b26ff0&sc_lang=en&w=250&hash=6EBDB492EAD23E42A27A6F12F1FDB6A7"
   },
   {
@@ -1622,7 +1622,7 @@ const PROFESSORS = [
     "highest_degree_school": "Stanford University",
     "undergrad_year": 1975,
     "undergrad_school": "Indian Institute of Technology",
-    "undergrad_major": "Chennai",
+    "undergrad_major": "Electronics Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/l/lakshman-krishnamurthi/lakshman-krishnamurthi-kellogg-faculty-874x728.jpg?rev=cbbe498c59a34afa874fe960701288cf&sc_lang=en&w=250&hash=30FE0A4B20D9069C9A46E2FF6539D48B"
   },
   {
@@ -1632,9 +1632,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2013,
     "highest_degree_school": "Harvard University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 2008,
+    "undergrad_school": "McGill University",
+    "undergrad_major": "Psychology",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/n/nour-kteily/nour-kteily-kellogg-faculty-874x728.jpg?rev=74454366612e459ab21513f06195128a&sc_lang=en&w=250&hash=2DF35CC48B4442F28DBD7DE53FC2CCD1"
   },
   {
@@ -1645,7 +1645,7 @@ const PROFESSORS = [
     "highest_degree_year": 2004,
     "highest_degree_school": "Cornell University",
     "undergrad_year": null,
-    "undergrad_school": "St. Stephen's College",
+    "undergrad_school": "St. Stephen's College, India",
     "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/aparna-labroo/aparna-labroo-kellogg-faculty-874x728.jpg?rev=b8d92ebdb3f6452c9debfc302730ea74&sc_lang=en&w=250&hash=D8D5178B0C8290986E6BFF7627282D36"
   },
@@ -1693,7 +1693,7 @@ const PROFESSORS = [
     "highest_degree_year": 1996,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Washington University in St. Louis",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/p/paul-leinwand/paul-leinwand-kellogg-faculty-874x728.jpg?rev=e4be09cb46ee47009d2adc109d410cd6&sc_lang=en&w=250&hash=A1EF8F724139E4250751CFF890004F16"
   },
@@ -1704,9 +1704,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1997,
     "highest_degree_school": "University of Pittsburgh",
-    "undergrad_year": 1991,
-    "undergrad_school": "The University of New Hampshire",
-    "undergrad_major": null,
+    "undergrad_year": 1984,
+    "undergrad_school": "Quinnipiac University",
+    "undergrad_major": "Accounting",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/andrew-leone/andrew-leone-kellogg-faculty-874x728.jpg?rev=c7728660d5cc4b02abec3c08cb040bb1&sc_lang=en&w=250&hash=703DCDEB4F34C6BBFB6C17BA39E06087"
   },
   {
@@ -1717,7 +1717,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Northwestern University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/e/eric-letsinger/headshot_eric-letsinger_kellogg-school.jpg?rev=929c0664fcaa4800959ad32c7659f79d&sc_lang=en&w=250&hash=8F7BCC9C02B994843F19A968B9D834AF"
   },
@@ -1729,7 +1729,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Rensselaer Polytechnic Institute",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/matthew-levatich/matt-levatich-kellogg-faculty-874x728.jpg?rev=128b63784ed64a03861b44a5cabfbe0f&sc_lang=en&w=250&hash=7A7E2000F8A48D18C24E96DB5512C3B4"
   },
@@ -1741,7 +1741,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Tel Aviv University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/e/erez-levy/erez-levy-kellogg-faculty-874x728.jpg?rev=de4fd8df6bc54b01bc2eb354e0a21d83&sc_lang=en&w=250&hash=7AACB67857C40BB743DD762C641CD469"
   },
@@ -1764,9 +1764,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2010,
     "highest_degree_school": "Yale University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 2003,
+    "undergrad_school": "University of Cologne",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/f/frank-limbrock/frank-limbrock-kellogg-faculty-874x728.jpg?rev=54773e411f6d45b0ac7f96fc687269b4&sc_lang=en&w=250&hash=AD35B5B67B7E3365CEFD3EC66D3BCCE6"
   },
   {
@@ -1776,9 +1776,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1982,
     "highest_degree_school": "University of Rochester",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1976,
+    "undergrad_school": "University of Bern",
+    "undergrad_major": "Economics, Operations Research",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/t/thomas-lys/thomas-lys-kellogg-faculty-874x728.jpg?rev=f6b6aa2ba0e84da083b69be532dd6bf1&sc_lang=en&w=250&hash=08299D7C273D82211BB213583E6555C0"
   },
   {
@@ -1825,7 +1825,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Chicago",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/suraj-malladi/kellogg-faculty-suraj-malladi-250x302.jpg?rev=0d7f1cec598b4caa8a970a17f399a367&sc_lang=en&w=250&hash=821480F5B581F33D6EDC6E0FAE3C610B"
   },
@@ -1836,9 +1836,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1999,
     "highest_degree_school": "Tel Aviv University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1993,
+    "undergrad_school": "Tel Aviv University",
+    "undergrad_major": "Computer Science & Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/sarit-markovich/sarit-markovich-kellogg-faculty-874x728.jpg?rev=d10ebe31723640ec93cb207475313a3d&sc_lang=en&w=250&hash=E6305E096CADB9A4D3E6C2C3F4028059"
   },
   {
@@ -1849,7 +1849,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "École Polytechnique",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/sebastien-martin/sebastien-martin-kellogg-faculty-874x728.jpg?rev=84770fc2cffa46e4b431d52e0e532a21&sc_lang=en&w=250&hash=8ECDA55A6AD814A03921FFA996124F66"
   },
@@ -1874,7 +1874,7 @@ const PROFESSORS = [
     "highest_degree_school": "Massachusetts Institute of Technology",
     "undergrad_year": 2000,
     "undergrad_school": "Massachusetts Institute of Technology",
-    "undergrad_major": "Economics",
+    "undergrad_major": "Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/d/david-matsa/david-matsa-kellogg-faculty-874x728.jpg?rev=60f54e7725be4bbb84eab1450f9d1ba7&sc_lang=en&w=250&hash=76C1A56A02DD23D620DFD58A921DBB54"
   },
   {
@@ -1886,7 +1886,7 @@ const PROFESSORS = [
     "highest_degree_school": "Harvard University",
     "undergrad_year": 2002,
     "undergrad_school": "Harvard University",
-    "undergrad_major": "magna cum laude with highest honors in field",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/g/gregor-matvos/gregor-matvos-kellogg-faculty-874x728.jpg?rev=de13951025744ed3811894e1f5e1fcdb&sc_lang=en&w=250&hash=C2941EDD55ACF8E5BADD7A8F44EDF3C5"
   },
   {
@@ -1922,7 +1922,7 @@ const PROFESSORS = [
     "highest_degree_school": "Princeton University",
     "undergrad_year": 1978,
     "undergrad_school": "University of Nebraska-Lincoln",
-    "undergrad_major": null,
+    "undergrad_major": "Economics, Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/t/therese-mcguire/therese-mcguire-kellogg-faculty-874x728.jpg?rev=7773aa66c79640e49d8ee89aba0b0693&sc_lang=en&w=250&hash=066DC64A5376737B7C85DB1DB36F0E97"
   },
   {
@@ -1933,7 +1933,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Loyola University Chicago",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/andrew-mckinley/headshot-andrew-mckinley_kellogg-faculty-874x728.jpg?rev=c779b013aab9430c90d7fff801459146&sc_lang=en&w=250&hash=3A5CB503752125181F50CF73CFBF3B5E"
   },
@@ -1946,7 +1946,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of Pennsylvania",
     "undergrad_year": 2003,
     "undergrad_school": "University of Pennsylvania",
-    "undergrad_major": "Mathematics",
+    "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/b/blake-mcshane/blake-mcshane-kellogg-faculty-874x728.jpg?rev=d3932cb5d08f437c81d80ae1d4a2c913&sc_lang=en&w=250&hash=E4B6812EC071488A183E50703E39B616"
   },
   {
@@ -1981,7 +1981,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Columbia University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/stuart-meyer/stuart-meyer-kellogg-faculty-874x728.jpg?rev=14fa8794628b45b5bf8525252a6d0a8b&sc_lang=en&w=250&hash=30643453B41C62D79F146BC1BAAC2176"
   },
@@ -1993,8 +1993,8 @@ const PROFESSORS = [
     "highest_degree_year": 2016,
     "highest_degree_school": "Harvard University",
     "undergrad_year": 2008,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_school": "Universita Commerciale Luigi Bocconi",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/f/filippo-mezzanotti/filippo-mezzanotti-kellogg-faculty-874x728.jpg?rev=9bb30b7677024bbfbdd3704ee350cb0f&sc_lang=en&w=250&hash=A9BF98F06A86F030D641AFD1927776D9"
   },
   {
@@ -2017,7 +2017,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Osaka City University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/h/hiromichi-mizuno/hiromichi-mizuno-kellogg-faculty-874x728.jpg?rev=3092424baab24e929e00b4a74ab48f50&sc_lang=en&w=250&hash=F643348A76C5D2FA86B1740616AC8B28"
   },
@@ -2029,7 +2029,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Sharif University of Technology",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/p/pooya-molavi/pooya-molavi-kellogg-faculty-874x728.jpg?rev=829a40ff3d614206bcf226256fd79932&sc_lang=en&w=250&hash=4F8AB713D04D341348C307D80C1C9ACD"
   },
@@ -2065,7 +2065,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Higher School of Economics (HSE)",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/i/ilya-morozov/ilya-morozov-kellogg-faculty-874x728.jpg?rev=ffa7424a47a947b1be67e099f6947f87&sc_lang=en&w=250&hash=82D8CCC45FAF30337B99C60DD0E25B26"
   },
@@ -2161,7 +2161,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Stanford University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/c/chika-okafor/headshot-chika-okafor_kellogg-faculty-874x728.jpg?rev=fb90f9b4ef11449e9731d907e8bf49eb&sc_lang=en&w=250&hash=353F17DF246AF3432CFFD7468B00793E"
   },
@@ -2172,9 +2172,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2001,
     "highest_degree_school": "Princeton University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1993,
+    "undergrad_school": "Warsaw University",
+    "undergrad_major": "Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/w/wojciech-olszewski/wojciech-olszewski-kellogg-faculty-874x728.jpg?rev=ac7c1d28bdd143d89062345debc7ea48&sc_lang=en&w=250&hash=56E7203094192FD05C5ACC3443A15355"
   },
   {
@@ -2196,8 +2196,8 @@ const PROFESSORS = [
     "highest_degree": "MBA",
     "highest_degree_year": 2002,
     "highest_degree_school": "Northwestern University",
-    "undergrad_year": 2007,
-    "undergrad_school": "Kellogg School of Management",
+    "undergrad_year": 2002,
+    "undergrad_school": "Northwestern University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/p/philip-ordway/philip-ordway-kellogg-faculty-874x728.jpg?rev=bebed16fe77e420da80c1e70f7ea2393&sc_lang=en&w=250&hash=0ECEA135671540ABB0A87925CCE66805"
   },
@@ -2209,7 +2209,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "National University of La Plata",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/julio-ottino/julio-ottino-kellogg-faculty-874x728.jpg?rev=9cc94a3b03114ae78be7376565737486&sc_lang=en&w=250&hash=F876BD1E6A409CB3DF5B1DF7838D795F"
   },
@@ -2222,7 +2222,7 @@ const PROFESSORS = [
     "highest_degree_school": "Massachusetts Institute of Technology",
     "undergrad_year": 2000,
     "undergrad_school": "University of Piraeus",
-    "undergrad_major": "Finance",
+    "undergrad_major": "Economics, Finance",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/d/dimitris-papanikolaou/dimitris-papanikolaou-kellogg-faculty-874x728.jpg?rev=2c848c3d73934586a766b3aff98616d9&sc_lang=en&w=250&hash=9CB3AA2E56B7FDF48154396D1BCFAA53"
   },
   {
@@ -2233,7 +2233,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Democritus University of Thrace",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/p/petros-paranikas/petros-paranikas-kellogg-faculty-874x728.jpg?rev=e82db63d38884712957d110e4c4dd6ba&sc_lang=en&w=250&hash=0876D6206D853A2DD625430FF1EBEB94"
   },
@@ -2245,8 +2245,8 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": "University of Bombay",
     "undergrad_year": 1974,
-    "undergrad_school": "Columbia University",
-    "undergrad_major": "Marketing and Finance",
+    "undergrad_school": "University of Bombay",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/h/homi-patel/homi-patel-kellogg-faculty-874x728.jpg?rev=e67527ac61984305a516c788f84aa2c0&sc_lang=en&w=250&hash=DD68767DE563DC151B43267B4EE23142"
   },
   {
@@ -2257,7 +2257,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": "Fuller Theological Seminary",
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Massachusetts Institute of Technology",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/n/nicholas-pearce/nicholas-pearce-kellogg-faculty-874x728.jpg?rev=06ca091013da42c9ae601600a13de6c8&sc_lang=en&w=250&hash=EB2E0D32A2EC21A7A288DF9283CED22D"
   },
@@ -2269,7 +2269,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Virginia",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jennifer-pendergast/jennifer-pendergast-kellogg-faculty-874x728.jpg?rev=e8e9927ce4134d7a8e2490748350ac8a&sc_lang=en&w=250&hash=DDC62C69F6186DC0EF583DC782FA6703"
   },
@@ -2280,9 +2280,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1996,
     "highest_degree_school": "Northwestern University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1991,
+    "undergrad_school": "Bocconi University",
+    "undergrad_major": "Economics, Universit&#224; Bocconi",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/n/nicola-persico/nicola-persico-kellogg-faculty-874x728.jpg?rev=4b47a042c39a4ea29c4858f37c72247a&sc_lang=en&w=250&hash=E9C0049CA85061B3DA3F363F3B67150E"
   },
   {
@@ -2305,7 +2305,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Miami",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/matthew-phillips/matthew-phillips_kellogg-headshot-874x728.jpg?rev=9452d4428b924778951b45cbcd7b84c8&sc_lang=en&w=250&hash=332E6435FF68370F4C4569F0C3B662F3"
   },
@@ -2317,7 +2317,7 @@ const PROFESSORS = [
     "highest_degree_year": 2013,
     "highest_degree_school": "Universitat Pompeu Fabra",
     "undergrad_year": 2008,
-    "undergrad_school": null,
+    "undergrad_school": "Universitat Pompeu Fabra in Barcelona",
     "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jacopo-ponticelli/jacopo-ponticelli-kellogg-faculty-874x728.jpg?rev=bede838853b9400bac5d89c4122b516d&sc_lang=en&w=250&hash=32B3C51A1D3DE64301977BF40058884E"
   },
@@ -2330,7 +2330,7 @@ const PROFESSORS = [
     "highest_degree_school": "Massachusetts Institute of Technology",
     "undergrad_year": 2006,
     "undergrad_school": "University of California, Los Angeles",
-    "undergrad_major": null,
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/michael-powell/michael-powell-kellogg-faculty-874x728.jpg?rev=848ef74eff2343fca0c7747dfd785708&sc_lang=en&w=250&hash=36D0BF43E055B1DBF2D307F75108E61A"
   },
   {
@@ -2365,7 +2365,7 @@ const PROFESSORS = [
     "highest_degree_year": 2005,
     "highest_degree_school": "Northwestern University",
     "undergrad_year": 2001,
-    "undergrad_school": "University of Torino",
+    "undergrad_school": "University of Torino, Italy",
     "undergrad_major": "Monetary and Financial Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/placeholders/foundation/ax/1x1-placeholder.png?rev=051422bedac94f84b85eeb65c9e9d46c&sc_lang=en&w=250&hash=002119835B4D6D6F7D6468FABB8A8A19"
   },
@@ -2378,7 +2378,7 @@ const PROFESSORS = [
     "highest_degree_school": "Northwestern University",
     "undergrad_year": 1967,
     "undergrad_school": "Hebrew University of Jerusalem",
-    "undergrad_major": "Physics",
+    "undergrad_major": "Mathematics, Physics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/artur-raviv/artur-raviv-kellogg-faculty-874x728.jpg?rev=b6040920290544f7b03c6c428b190351&sc_lang=en&w=250&hash=31C5EE26A48818A9AF1FC0411A90C4E1"
   },
   {
@@ -2389,7 +2389,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Instituto Tecnológico Autónomo de México (ITAM)",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/l/luis-rayo/luis-rayo-kellogg-faculty-874x728.jpg?rev=778ba888c7e441019d6261f64485b6a0&sc_lang=en&w=250&hash=ECB5D9984B71FB73AFE4846B46835282"
   },
@@ -2400,9 +2400,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1989,
     "highest_degree_school": "University of Rochester",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1981,
+    "undergrad_school": "Portuguese Catholic University",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/sergio-rebelo/sergio-rebelo-kellogg-faculty-874x728.jpg?rev=a3c0a667585b4818abbc33a9f2bf2d6e&sc_lang=en&w=250&hash=DF0171FDA6A74CF42DAC5AE51BC95601"
   },
   {
@@ -2424,9 +2424,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2006,
     "highest_degree_school": "University of Edinburgh",
-    "undergrad_year": 2007,
-    "undergrad_school": "University of Cambridge",
-    "undergrad_major": "Economics",
+    "undergrad_year": 2006,
+    "undergrad_school": "University of Edinburgh",
+    "undergrad_major": "Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/b/bryony-reich/byrony-reich-kellogg-faculty/headshot---medium---874x729_m.jpg?rev=5dcf485c819447c49555f3d5688877dc&sc_lang=en&w=250&hash=79F9145C445B2AEFC048B8062F7225C0"
   },
   {
@@ -2450,7 +2450,7 @@ const PROFESSORS = [
     "highest_degree_school": "Harvard University",
     "undergrad_year": 2000,
     "undergrad_school": "Yale University",
-    "undergrad_major": "distinction in both majors",
+    "undergrad_major": "Sociology and Psychology",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/l/lauren-rivera/lauren-rivera-kellogg-faculty-874x728.jpg?rev=3837d92ea66a4eecbb510166333dfcb3&sc_lang=en&w=250&hash=01B86731682A142E7AEE60F89CD5259E"
   },
   {
@@ -2461,7 +2461,7 @@ const PROFESSORS = [
     "highest_degree_year": 1993,
     "highest_degree_school": "University of Western Ontario",
     "undergrad_year": 1987,
-    "undergrad_school": "University of British Columbia",
+    "undergrad_school": "University of British Columbia, Canada",
     "undergrad_major": "Canada",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/n/neal-roese/neal-roese-kellogg-faculty-874x728.jpg?rev=85f99bf69353495fa64bdc57d18e2a05&sc_lang=en&w=250&hash=677D6701FC9C0433D8CC75CD6E5C1A21"
   },
@@ -2473,7 +2473,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Wisconsin-Madison",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/matthew-roling/matthew-roling-kellogg-faculty-headshot.jpg?rev=80f908db3c864c31a2684a686420f6ab&sc_lang=en&w=250&hash=99E8AD06D345F3AE37AD91EA2522EFCA"
   },
@@ -2485,7 +2485,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Bocconi University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/maddalena-ronchi/kellogg-faculty-maddalena-ronchi-874-728.jpg?rev=56ee9f713617402e97881030b67fa8be&sc_lang=en&w=250&hash=6AE209E869880D428153B8D3D255359C"
   },
@@ -2497,8 +2497,8 @@ const PROFESSORS = [
     "highest_degree_year": 2004,
     "highest_degree_school": "University of Rochester",
     "undergrad_year": 1994,
-    "undergrad_school": "Dr. B. R. Ambedkar National Institute of Technology",
-    "undergrad_major": "India",
+    "undergrad_school": "Dr. B. R. Ambedkar National Institute of Technology, India",
+    "undergrad_major": "Instrumentation & Control, Technology, Instrumentation & Control",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/sugata-roychowdhury/sugata-roychowdhury-kellogg-faculty-874x728.jpg?rev=567fb5fed70e42af9cbbc8b434f33b4f&sc_lang=en&w=250&hash=81676EB5A9C4FF24529ED82249D1C644"
   },
   {
@@ -2510,7 +2510,7 @@ const PROFESSORS = [
     "highest_degree_school": "Ohio State University",
     "undergrad_year": 1998,
     "undergrad_school": "University of California, Santa Cruz",
-    "undergrad_major": null,
+    "undergrad_major": "Psychology",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/d/derek-rucker/derek-rucker-kellogg-faculty-874x728.jpg?rev=d00de55f3a0f41bfad255595b908086f&sc_lang=en&w=250&hash=4C022154D6EA75E814487C292E9A0B9D"
   },
   {
@@ -2521,7 +2521,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Italian University (unspecified)",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/r/roberto-saitto/roberto-saitto_kellogg-headshot-874x728.jpg?rev=aab75abc1d2e4169b712ad5301a41d61&sc_lang=en&w=250&hash=1E5A3E15106FD57B263BC7F3E79EDBB2"
   },
@@ -2532,9 +2532,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2008,
     "highest_degree_school": "Stanford University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 2000,
+    "undergrad_school": "Hebrew University of Jerusalem",
+    "undergrad_major": "Computer Science",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/y/yuval-salant/yuval-salant-kellogg-faculty-874x728.jpg?rev=677df69a43a4429a98f10d2ba0c57de9&sc_lang=en&w=250&hash=9607F9D653D449760AA19BC82CD0DD81"
   },
   {
@@ -2545,8 +2545,8 @@ const PROFESSORS = [
     "highest_degree_year": 1996,
     "highest_degree_school": "University of Pennsylvania",
     "undergrad_year": 1986,
-    "undergrad_school": null,
-    "undergrad_major": "Brazil",
+    "undergrad_school": "Pontificia Universidade Catolica, Brazil",
+    "undergrad_major": "Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/alvaro-sandroni/alvaro-sandroni-kellogg-faculty-874x728.jpg?rev=73ab8311d6db4c5fb7ca96f9653229d6&sc_lang=en&w=250&hash=63C934CD9EB46DA68385001CA5B603BA"
   },
   {
@@ -2580,9 +2580,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1997,
     "highest_degree_school": "Northwestern University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1992,
+    "undergrad_school": "Harvey Mudd College",
+    "undergrad_major": "Mathematics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/b/brett-saraniti/brett-saraniti-kellogg-faculty-874x728.jpg?rev=fee945c0eba04f4ca3089281b0c5f0ef&sc_lang=en&w=250&hash=A2C48E45B036F0ACDEB716C7A2F1AFA7"
   },
   {
@@ -2604,9 +2604,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1993,
     "highest_degree_school": "University of Pennsylvania",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1985,
+    "undergrad_school": "Indian Institute of Technology",
+    "undergrad_major": "Electrical Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/mohanbir-sawhney/mohanbir-sawhney-kellogg-faculty-874x728.jpg?rev=e70778279eba455682b96859f0d069ac&sc_lang=en&w=250&hash=A7FBE465E10A9EF864F6E6C4259D40FD"
   },
   {
@@ -2617,7 +2617,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Princeton University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/michael-schill/michael-schill-northwestern-university-original/michael-schill-kellogg-faculty-874x729.jpg?rev=12809756ea624778abd8e8390ca7da93&sc_lang=en&w=250&hash=2E84671A4AB0B4EA36387C24D96EA934"
   },
@@ -2629,7 +2629,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Chicago",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/molly-schnell/molly-schnell_kellogg-headshot/headshot---small---342x285_m.jpg?rev=4ad7ec9c5bf248569078ce6b485c1892&sc_lang=en&w=250&hash=0414121C20BBB5D901AFCA778E3E5B2E"
   },
@@ -2665,7 +2665,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Brigham Young University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/b/bryan-seegmiller/bryan-seegmiller-kellogg-faculty-874x728.jpg?rev=3d2131fd9c304328b446414bf70bf916&sc_lang=en&w=250&hash=9E6042ABE484DE38A329D764363E566C"
   },
@@ -2676,9 +2676,9 @@ const PROFESSORS = [
     "highest_degree": "MBA",
     "highest_degree_year": 2005,
     "highest_degree_school": "Northwestern University",
-    "undergrad_year": 2012,
-    "undergrad_school": "MIT Sloan School of Business",
-    "undergrad_major": null,
+    "undergrad_year": 2005,
+    "undergrad_school": "Northwestern University",
+    "undergrad_major": "Industrial Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/b/birju-shah/birju-shah-kellogg-faculty-874x728.jpg?rev=d5813e6e81544c60acf5e9a738503141&sc_lang=en&w=250&hash=4D56295C4EA732382D659B5F547CF4F0"
   },
   {
@@ -2688,9 +2688,9 @@ const PROFESSORS = [
     "highest_degree": "MBA",
     "highest_degree_year": 1982,
     "highest_degree_school": "Northwestern University",
-    "undergrad_year": 1982,
-    "undergrad_school": "Northwestern University",
-    "undergrad_major": null,
+    "undergrad_year": 1974,
+    "undergrad_school": "Brown University",
+    "undergrad_major": "Biology",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/joel-shalowitz/kellogg-headshot_joel-shalowitz/headshot---small---342x285_m.jpg?rev=2a84d3589d0c43dbacb51fec0f79b5e0&sc_lang=en&w=250&hash=2F800FE5C50E2F9C404942ABB772BA57"
   },
   {
@@ -2724,9 +2724,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 2004,
     "highest_degree_school": "Queen's University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 2004,
+    "undergrad_school": "Queen's University",
+    "undergrad_major": "Commerce",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/m/michael-sinkinson/michael-sinkinson-kellogg-faculty-874x728.jpg?rev=e740ee865c2148c5911a7cee4b87764d&sc_lang=en&w=250&hash=A806C15A97347D26852F12029C500E5E"
   },
   {
@@ -2738,7 +2738,7 @@ const PROFESSORS = [
     "highest_degree_school": "Stanford University",
     "undergrad_year": 1986,
     "undergrad_school": "Imperial College of Science and Technology",
-    "undergrad_major": "First Class Honors",
+    "undergrad_major": "Electrical Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/c/constantinos-skiadas/constantinos-skiadas-kellogg-faculty-874x728.jpg?rev=b1ef22db70a44a22a568046eb4232934&sc_lang=en&w=250&hash=8CBDBF52C1072CBDDEA634B5375B1FB7"
   },
   {
@@ -2749,7 +2749,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Princeton University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/k/karen-smilowitz/karen-smilowitz-kellogg-faculty-874x728.jpg?rev=82e7177d03734c7ebe0aac3b44ad4ebe&sc_lang=en&w=250&hash=FC8C762902B56B5882661E56FEDF6C44"
   },
@@ -2762,7 +2762,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of Chicago",
     "undergrad_year": 2007,
     "undergrad_school": "University of St. Gallen (Switzerland)",
-    "undergrad_major": "Business Administration",
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jorg-spenkuch/jorg-spenkuch-kellogg-faculty-874x728.jpg?rev=a8d5ae22b50241058b4cf14e628cb01a&sc_lang=en&w=250&hash=5DE2BBB59706FF83785AE53293FC4C4A"
   },
   {
@@ -2774,7 +2774,7 @@ const PROFESSORS = [
     "highest_degree_school": "National University of Ireland",
     "undergrad_year": 1984,
     "undergrad_school": "National University of Ireland",
-    "undergrad_major": "Education & Geography",
+    "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/james-spillane/james-spillane-kellogg-faculty-874x728.jpg?rev=11737ccc9fa54767bf2c765815cd9461&sc_lang=en&w=250&hash=9696BA520D8F06881A3C92CD5DD01BC5"
   },
   {
@@ -2798,7 +2798,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of Pittsburgh",
     "undergrad_year": 1979,
     "undergrad_school": "Indian Institute of Management",
-    "undergrad_major": "Economics",
+    "undergrad_major": "Finance, Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/swaminathan-sridharan/swaminathan-sridharan-kellogg-faculty-874x728.jpg?rev=0be3daccaadb4d52a770f7f535202b46&sc_lang=en&w=250&hash=EDAD62E28C88EE73F22A8DAF340593A8"
   },
   {
@@ -2917,7 +2917,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Santa Clara University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jacob-teeny/jacob-teeny-kellogg-faculty-874x728.jpg?rev=cf17e770f7704076835f37f4e74d1c52&sc_lang=en&w=250&hash=0D9746029770CF8FC134E5920A0E3332"
   },
@@ -2954,7 +2954,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of California, Berkeley",
     "undergrad_year": 1984,
     "undergrad_school": "Wabash College and Indiana University",
-    "undergrad_major": "MAth",
+    "undergrad_major": "Math",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/e/emerson-tiller/emerson-tiller-kellogg-faculty-874x728.jpg?rev=892e9c3abd13415b911dc0f9e86d2939&sc_lang=en&w=250&hash=886009B2E1723B6654DCDDD03C5CB0D2"
   },
   {
@@ -2965,7 +2965,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Lomonosov Moscow State University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/artem-timoshenko/artem-timoshenko-kellogg-faculty-874x728.jpg?rev=81d5a3bde8514f08bbd0afa4d0bc7ae5&sc_lang=en&w=250&hash=2653291DA68B12531EC0FCE6F3F48B82"
   },
@@ -3002,7 +3002,7 @@ const PROFESSORS = [
     "highest_degree_school": "Stanford University",
     "undergrad_year": 2009,
     "undergrad_school": "University of Pennsylvania",
-    "undergrad_major": "Economics + Math + Hispanic Studies",
+    "undergrad_major": "Economics, Mathematics, And Hispanic Studies",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/a/anna-tuchman/anna-tuchman-kellogg-faculty-874x728.jpg?rev=4d8ebd2168504736a056fa7c6b4d9abd&sc_lang=en&w=250&hash=5B9A2590C15D28F70E77C4CCB59E5559"
   },
   {
@@ -3036,9 +3036,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1995,
     "highest_degree_school": "Stanford University",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1989,
+    "undergrad_school": "University KU Leuven, Belgium",
+    "undergrad_major": "Applied Sciences",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/j/jan-van-mieghem/jan-van-mieghem-kellogg-faculty-874x728.jpg?rev=8d84b7abe4044025a456deccbd18e599&sc_lang=en&w=250&hash=0FB6C392526DDAFCECF4EB21D9743B31"
   },
   {
@@ -3061,7 +3061,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Illinois at Urbana-Champaign",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/s/stephen-vivian/stephen-vivian-kellogg-faculty/headshot---small---342x285_m.jpg?rev=1443ca9ce43b497ea11f07bdc3be6c21&sc_lang=en&w=250&hash=560E41113FF4E71E03953BD10CF2E552"
   },
@@ -3098,7 +3098,7 @@ const PROFESSORS = [
     "highest_degree_school": "University of Chicago",
     "undergrad_year": 1990,
     "undergrad_school": "Vanderbilt University",
-    "undergrad_major": null,
+    "undergrad_major": "Economics",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/b/beverly-walther/beverly-walther-kellogg-faculty-874x728.jpg?rev=d4b191e06d0449ccb3a85943b98d05ef&sc_lang=en&w=250&hash=04393DD61F535317779004828DBDEB3B"
   },
   {
@@ -3133,7 +3133,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "University of Michigan",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/l/lulu-wang/kellogg-faculty-lulu-wang-874x728.jpg?rev=eb578afbbf1e4353a334d9ea6a0d3446&sc_lang=en&w=250&hash=AE4C020FBCF8CB28E090029CDE3DB57E"
   },
@@ -3181,7 +3181,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Harvard University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/n/nils-wernerfelt/nils-wernerfelt-kellogg-faculty-250x304.jpg?rev=b0b59f0d27ae49eca5c8ec6b5db6ca86&sc_lang=en&w=250&hash=20916A88BBF8CC95B695BA81AA57C8EC"
   },
@@ -3193,7 +3193,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Hebrew University of Jerusalem",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/r/regina-wittenberg-moerman/regina-wittenberg-moerman-kellogg-faculty/headshot---medium---874x729_m.jpg?rev=3946397dbd8e4a0ca478fe0c699479e9&sc_lang=en&w=250&hash=446A8F6675AA93C9CE17A00838EBD776"
   },
@@ -3228,9 +3228,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1986,
     "highest_degree_school": "University of Pennsylvania",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1986,
+    "undergrad_school": "University of Pennsylvania",
+    "undergrad_major": "Organization and Strategy",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/e/edward-zajac/edward-zajac-kellogg-faculty-874x728.jpg?rev=5aa892edee414b6ba894d58601a8ef8c&sc_lang=en&w=250&hash=26982641D4722149E74EF43A421E22DC"
   },
   {
@@ -3240,9 +3240,9 @@ const PROFESSORS = [
     "highest_degree": "PhD",
     "highest_degree_year": 1996,
     "highest_degree_school": "Massachusetts Institute of Technology",
-    "undergrad_year": null,
-    "undergrad_school": null,
-    "undergrad_major": null,
+    "undergrad_year": 1992,
+    "undergrad_school": "University of Karlsruhe",
+    "undergrad_major": "Business Engineering",
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/f/florian-zettelmeyer/florian-zettelmeyer-kellogg-faculty-874x728.jpg?rev=ba64907299804c49abf42abee47a7f0e&sc_lang=en&w=250&hash=F02BDB04801F95E8E0C73DAE6B84EE4C"
   },
   {
@@ -3253,7 +3253,7 @@ const PROFESSORS = [
     "highest_degree_year": null,
     "highest_degree_school": null,
     "undergrad_year": null,
-    "undergrad_school": null,
+    "undergrad_school": "Stanford University",
     "undergrad_major": null,
     "image": "https://kellogg.northwestern.edu/-/media/images/web2022/people/l/letian-zhang/letian-zhang_kellogg-headshot-874x728.jpg?rev=b371d4e03f2e4292a3d469ddab609dfb&sc_lang=en&w=250&hash=417B5F98455E42E5ACE9E7F534BFD02D"
   }
