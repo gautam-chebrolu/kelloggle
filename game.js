@@ -7,6 +7,8 @@
 const MAX_GUESSES = 10;
 const CLOSE_THRESHOLD = 3; // years within this range are "close" (yellow)
 
+const REGULAR_PROFESSORS = PROFESSORS.filter(p => p.difficulty === 'regular');
+
 // ── State ──
 let targetProfessor = null;
 let guessCount = 0;
@@ -95,12 +97,12 @@ function pickDailyProfessor() {
     hash = ((hash << 5) - hash) + dateStr.charCodeAt(i);
     hash |= 0;
   }
-  const idx = Math.abs(hash) % PROFESSORS.length;
-  return PROFESSORS[idx];
+  const idx = Math.abs(hash) % REGULAR_PROFESSORS.length;
+  return REGULAR_PROFESSORS[idx];
 }
 
 function pickRandomProfessor() {
-  return PROFESSORS[Math.floor(Math.random() * PROFESSORS.length)];
+  return REGULAR_PROFESSORS[Math.floor(Math.random() * REGULAR_PROFESSORS.length)];
 }
 
 // ══════════════════════════════════════

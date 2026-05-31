@@ -80,7 +80,7 @@ fs.writeFileSync('kellogg_faculty.json', JSON.stringify(data, null, 2), 'utf-8')
 
 // Now generate professors.js with only game-relevant fields
 const GAME_FIELDS = [
-  'name', 'department', 'tenure',
+  'name', 'department', 'tenure', 'difficulty',
   'highest_degree', 'highest_degree_year', 'highest_degree_school',
   'undergrad_year', 'undergrad_school', 'undergrad_major'
 ];
