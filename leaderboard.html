@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ProfGuess Tournament Leaderboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+
+  <script src="firebase-config.js"></script>
+
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+    import { getFirestore, collection, onSnapshot, query, orderBy } 
+      from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+    if (!window.FIREBASE_CONFIG) {
+      document.body.innerHTML = '<div style="color:white;padding:2rem;">firebase-config.js not found. Copy firebase-config.example.js → firebase-config.js and fill in your values.</div>';
+      throw new Error("Missing config");
+    }
+
+    const app = initializeApp(window.FIREBASE_CONFIG);
+    const db  = getFirestore(app);
+
+    const q = query(collection(db, 'profguess'));
+    
+    onSnapshot(q, (snapshot) => {
+      const data = snapshot.docs.map(doc => doc.data());
+      
+      const started = [];
+      const completed = [];
+      
+      data.forEach(d => {
+        if (d.status === 'completed') completed.push(d);
+        else started.push(d);
+      });
+
+      // Sort completed games:
+      // 1. Wins first
+      // 2. Win tiebreaker: fewest guesses, then fastest time
+      // 3. Loss tiebreaker: most greens, then fastest time
+      completed.sort((a, b) => {
+        if (a.won !== b.won) return a.won ? -1 : 1;
+        
+        if (a.won) {
+          if (a.guessesMade !== b.guessesMade) return a.guessesMade - b.guessesMade;
+          return (a.elapsedSeconds || 0) - (b.elapsedSeconds || 0);
+        } else {
+          if (a.greenCount !== b.greenCount) return (b.greenCount || 0) - (a.greenCount || 0);
+          return (a.elapsedSeconds || 0) - (b.elapsedSeconds || 0);
+        }
+      });
+
+      // Sort started alphabetically by team name
+      started.sort((a, b) => (a.team || '').localeCompare(b.team || ''));
+
+      renderTable([...completed, ...started], completed.length);
+      updateStats(completed);
+    }, (error) => {
+      console.error("Leaderboard Error:", error);
+      document.getElementById('leaderboard-body').innerHTML = `
+        <tr><td colspan="7" style="text-align:center; color:#fc8181; padding:2rem;">
+          Connection error or permission denied.<br>Check console and Firestore security rules.
+        </td></tr>
+      `;
+    });
+
+    function formatTime(secs) {
+      if (secs == null || isNaN(secs)) return '—';
+      const m = Math.floor(secs / 60);
+      const s = secs % 60;
+      return `${m}:${String(s).padStart(2, '0')}`;
+    }
+
+    function renderTable(rows, completedCount) {
+      const tbody = document.getElementById('leaderboard-body');
+      tbody.innerHTML = '';
+      
+      if (rows.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="empty-state">No games played yet.</td></tr>`;
+        return;
+      }
+
+      rows.forEach((row, i) => {
+        const tr = document.createElement('tr');
+        if (row.status !== 'completed') tr.classList.add('in-progress');
+        
+        const rank = row.status === 'completed' ? (i + 1) : '—';
+        
+        const resultBadge = row.status !== 'completed' 
+          ? `<span class="badge" style="background:rgba(255,255,255,0.1); color:#cbd5e1">In Progress</span>`
+          : (row.won 
+              ? `<span class="badge" style="background:rgba(104,211,145,0.15); color:#68d391">✅ Won</span>`
+              : `<span class="badge" style="background:rgba(252,129,129,0.15); color:#fc8181">❌ Lost</span>`);
+
+        const guessesStr = row.status === 'completed' ? row.guessesMade : '—';
+        const greensStr  = row.status === 'completed' ? row.greenCount : '—';
+        const timeStr    = row.status === 'completed' ? formatTime(row.elapsedSeconds) : '—';
+
+        tr.innerHTML = `
+          <td><div class="rank-badge ${i<3 && row.status==='completed' ? 'top-3':''}">${rank}</div></td>
+          <td class="team-name">${row.team || 'Unknown Team'}</td>
+          <td>${resultBadge}</td>
+          <td class="metric">${guessesStr}</td>
+          <td class="metric">${greensStr}</td>
+          <td class="metric">${timeStr}</td>
+          <td><div class="status-indicator ${row.status === 'completed' ? 'done' : 'playing'}"></div></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function updateStats(completed) {
+      document.getElementById('total-games').textContent = completed.length;
+      
+      if (completed.length === 0) {
+        document.getElementById('win-rate').textContent = '—';
+        document.getElementById('avg-guesses').textContent = '—';
+        return;
+      }
+      
+      const wins = completed.filter(c => c.won).length;
+      const winRate = Math.round((wins / completed.length) * 100);
+      document.getElementById('win-rate').textContent = `${winRate}%`;
+
+      const winningGuesses = completed.filter(c => c.won).map(c => c.guessesMade);
+      if (winningGuesses.length > 0) {
+        const avgG = winningGuesses.reduce((a, b) => a + b, 0) / winningGuesses.length;
+        document.getElementById('avg-guesses').textContent = avgG.toFixed(1);
+      } else {
+        document.getElementById('avg-guesses').textContent = '—';
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background: #0d0f14;
+      color: #f0f4ff;
+      font-family: 'Inter', -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .leaderboard-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .header h1 {
+      font-family: 'Newsreader', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin: 0 0 8px;
+      color: #fff;
+    }
+    .header p {
+      color: #8b9ab8;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      flex: 1;
+      background: linear-gradient(145deg, #161922, #1e2330);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-card .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #8b9ab8;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .stat-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      font-family: 'Newsreader', serif;
+    }
+
+    .table-card {
+      background: #161922;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th {
+      background: rgba(255,255,255,0.02);
+      color: #8b9ab8;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    td {
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    
+    tr { transition: background 0.2s; }
+    tr:hover { background: rgba(255,255,255,0.02); }
+    
+    tr.in-progress td { color: #8b9ab8; }
+    tr.in-progress .team-name { color: #cbd5e1; }
+
+    .rank-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      color: #cbd5e1;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .rank-badge.top-3 {
+      background: rgba(251,211,141,0.15);
+      color: #fbd38d;
+    }
+
+    .team-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #fff;
+    }
+
+    .metric {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .status-indicator {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .status-indicator.done { background: #68d391; box-shadow: 0 0 10px rgba(104,211,145,0.4); }
+    .status-indicator.playing { background: #63b3ed; animation: pulse 1.5s infinite; }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(99,179,237,0.4); }
+      70% { box-shadow: 0 0 0 6px rgba(99,179,237,0); }
+      100% { box-shadow: 0 0 0 0 rgba(99,179,237,0); }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #8b9ab8;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="leaderboard-container">
+    <div class="header">
+      <h1>ProfGuess Leaderboard</h1>
+      <p>Live tournament standings</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="label">Games Completed</div>
+        <div class="value" id="total-games">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Win Rate</div>
+        <div class="value" id="win-rate">0%</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Avg Guesses (Wins)</div>
+        <div class="value" id="avg-guesses">0</div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th width="60">Rank</th>
+            <th>Team Name</th>
+            <th>Result</th>
+            <th>Guesses</th>
+            <th>Greens</th>
+            <th>Time</th>
+            <th width="40"></th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <!-- Rows injected by Firebase -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
