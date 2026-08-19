@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public game: sessions are created at start, completed at the end, and
+    // optionally named afterwards. Deletion remains prohibited.
+    match /profguess/{docId} {
+      allow read, create, update: if true;
+    }
+  }
+}

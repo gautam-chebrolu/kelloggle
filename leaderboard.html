@@ -50,8 +50,8 @@
         }
       });
 
-      // Sort started alphabetically by team name
-      started.sort((a, b) => (a.team || '').localeCompare(b.team || ''));
+      // Sort started alphabetically by player name (older tournament records use team).
+      started.sort((a, b) => (a.name || a.team || '').localeCompare(b.name || b.team || ''));
 
       renderTable([...completed, ...started], completed.length);
       updateStats(completed);
@@ -98,7 +98,7 @@
 
         tr.innerHTML = `
           <td><div class="rank-badge ${i<3 && row.status==='completed' ? 'top-3':''}">${rank}</div></td>
-          <td class="team-name">${row.team || 'Unknown Team'}</td>
+          <td class="team-name">${row.name || row.team || 'Anonymous player'}</td>
           <td>${resultBadge}</td>
           <td class="metric">${guessesStr}</td>
           <td class="metric">${greensStr}</td>

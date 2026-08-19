@@ -46,6 +46,16 @@
         <span>Start Game</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
       </button>
+
+      <section class="leaderboard-section start-leaderboard" aria-labelledby="start-leaderboard-title">
+        <div class="leaderboard-heading">
+          <h2 id="start-leaderboard-title">Leaderboard</h2>
+          <span>Fewest guesses wins</span>
+        </div>
+        <div id="start-leaderboard-list" class="leaderboard-list" aria-live="polite">
+          <p class="leaderboard-empty">Loading scores...</p>
+        </div>
+      </section>
     </div>
   </div>
 
@@ -129,6 +139,24 @@
 
       <div class="result-share" id="result-share-grid"></div>
 
+      <section class="name-form-card" aria-labelledby="name-form-title">
+        <h2 id="name-form-title">Add your name to the leaderboard</h2>
+        <div class="name-input-row">
+          <input id="player-name-input" class="name-input" type="text" maxlength="30"
+            placeholder="Enter your name..." autocomplete="off" spellcheck="false">
+          <button id="submit-score-btn" class="btn-primary btn-submit" onclick="handleSubmitScore()">Save</button>
+        </div>
+        <p id="submit-status" class="submit-status" aria-live="polite"></p>
+      </section>
+
+      <section class="leaderboard-section result-leaderboard" aria-labelledby="result-leaderboard-title">
+        <div class="leaderboard-heading">
+          <h2 id="result-leaderboard-title">Leaderboard</h2>
+          <span>Fewest guesses wins</span>
+        </div>
+        <div id="result-leaderboard-list" class="leaderboard-list" aria-live="polite"></div>
+      </section>
+
       <div class="result-actions">
         <button class="btn-primary" onclick="copyShareText()">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
@@ -142,6 +170,10 @@
   <!-- Toast -->
   <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
+  <!-- Firebase SDK (compat v9 for vanilla JavaScript) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
   <script src="professors.js"></script>
   <script src="game.js"></script>
 </body>

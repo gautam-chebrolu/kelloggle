@@ -6,6 +6,8 @@
 // ── Configuration ──
 const MAX_GUESSES = 10;
 const CLOSE_THRESHOLD = 3; // years within this range are "close" (yellow)
+const LEADERBOARD_COLLECTION = 'profguess';
+const LEADERBOARD_LIMIT = 10;
 
 const REGULAR_PROFESSORS = PROFESSORS.filter(p => p.difficulty === 'regular');
 
@@ -16,6 +18,24 @@ let guessedNames = [];
 let gameOver = false;
 let selectedAutocompleteIndex = -1;
 let greenCount = 0;
+let db = null;
+let gameStartTime = null;
+let activeDocRef = null;
+let activeDocReady = Promise.resolve();
+let scoreSubmitted = false;
+
+function initFirebase() {
+  try {
+    if (!window.FIREBASE_CONFIG) {
+      console.warn('ProfGuess: firebase-config.js not found — leaderboard disabled.');
+      return;
+    }
+    if (!firebase.apps.length) firebase.initializeApp(window.FIREBASE_CONFIG);
+    db = firebase.firestore();
+  } catch (error) {
+    console.warn('ProfGuess: Firebase initialization failed —', error.message);
+  }
+}
 
 // ── Attribute keys (order matters — matches grid columns) ──
 const ATTRIBUTES = [
@@ -73,6 +93,11 @@ function startGame() {
   gameOver = false;
   greenCount = 0;
   selectedAutocompleteIndex = -1;
+  gameStartTime = new Date();
+  activeDocRef = null;
+  activeDocReady = Promise.resolve();
+  scoreSubmitted = false;
+  createGameDocument();
 
   // Clear UI
   guessesGrid.innerHTML = '';
@@ -413,7 +438,162 @@ function endGame(won) {
   // Build share grid
   buildShareGrid();
 
+  updateGameDocument(won);
+  resetScoreForm();
+  fetchLeaderboard('result-leaderboard-list');
+
   showScreen(resultScreen);
+}
+
+/* Firestore game lifecycle: create on start, finish on result, name later. */
+async function createGameDocument() {
+  if (!db || !gameStartTime) return;
+  const ref = db.collection(LEADERBOARD_COLLECTION).doc(gameStartTime.toISOString());
+  activeDocRef = ref;
+  try {
+    activeDocReady = ref.set({
+      name: '',
+      status: 'in_progress',
+      won: null,
+      guessesMade: null,
+      greenCount: null,
+      elapsedSeconds: null,
+      targetProfessor: null,
+      startedAt: firebase.firestore.FieldValue.serverTimestamp(),
+      endedAt: null,
+    });
+    await activeDocReady;
+  } catch (error) {
+    console.warn('ProfGuess: could not create game document —', error.message);
+  }
+}
+
+async function updateGameDocument(won) {
+  if (!db || !activeDocRef) return;
+  try {
+    await activeDocReady;
+    const elapsedSeconds = gameStartTime
+      ? Math.round((Date.now() - gameStartTime.getTime()) / 1000)
+      : null;
+    await activeDocRef.update({
+      status: 'completed',
+      won,
+      guessesMade: guessCount,
+      greenCount,
+      elapsedSeconds,
+      targetProfessor: targetProfessor ? targetProfessor.name : null,
+      endedAt: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+  } catch (error) {
+    console.warn('ProfGuess: could not update game document —', error.message);
+  }
+}
+
+function resetScoreForm() {
+  const input = $('player-name-input');
+  const button = $('submit-score-btn');
+  const status = $('submit-status');
+  if (!input || !button || !status) return;
+  input.value = '';
+  input.disabled = false;
+  button.disabled = false;
+  status.textContent = '';
+  status.className = 'submit-status';
+}
+
+async function handleSubmitScore() {
+  if (scoreSubmitted) return;
+  const input = $('player-name-input');
+  const button = $('submit-score-btn');
+  const status = $('submit-status');
+  const name = input.value.trim();
+  if (!name) {
+    status.textContent = 'Please enter your name first.';
+    status.className = 'submit-status error';
+    input.focus();
+    return;
+  }
+  if (!db || !activeDocRef) {
+    status.textContent = 'Leaderboard is unavailable for this game.';
+    status.className = 'submit-status error';
+    return;
+  }
+  button.disabled = true;
+  input.disabled = true;
+  status.textContent = 'Saving...';
+  status.className = 'submit-status saving';
+  try {
+    await activeDocReady;
+    await activeDocRef.update({ name });
+    scoreSubmitted = true;
+    status.textContent = 'Saved to the leaderboard!';
+    status.className = 'submit-status success';
+    fetchLeaderboard('result-leaderboard-list');
+  } catch (error) {
+    console.error('ProfGuess: could not save name', error);
+    status.textContent = 'Could not save — please try again.';
+    status.className = 'submit-status error';
+    button.disabled = false;
+    input.disabled = false;
+  }
+}
+
+async function fetchLeaderboard(listId) {
+  const list = $(listId);
+  if (!list) return;
+  if (!db) {
+    list.innerHTML = '<p class="leaderboard-empty">Leaderboard unavailable.</p>';
+    return;
+  }
+  try {
+    const snapshot = await db.collection(LEADERBOARD_COLLECTION).get();
+    const entries = snapshot.docs.map(doc => doc.data())
+      .filter(entry => entry.status === 'completed' && entry.name && typeof entry.guessesMade === 'number');
+    entries.sort((a, b) => {
+      if (a.won !== b.won) return a.won ? -1 : 1;
+      if (a.won) {
+        if (a.guessesMade !== b.guessesMade) return a.guessesMade - b.guessesMade;
+      } else if (a.greenCount !== b.greenCount) {
+        return (b.greenCount || 0) - (a.greenCount || 0);
+      }
+      return (a.elapsedSeconds ?? Infinity) - (b.elapsedSeconds ?? Infinity);
+    });
+    renderLeaderboard(entries.slice(0, LEADERBOARD_LIMIT), list);
+  } catch (error) {
+    console.warn('ProfGuess: could not load leaderboard —', error.message);
+    list.innerHTML = '<p class="leaderboard-empty">Could not load scores. Please try again shortly.</p>';
+  }
+}
+
+function renderLeaderboard(entries, list) {
+  if (!entries.length) {
+    list.innerHTML = '<p class="leaderboard-empty">No named games yet — be the first!</p>';
+    return;
+  }
+  list.innerHTML = entries.map((entry, index) => {
+    const result = entry.won ? `${entry.guessesMade} guess${entry.guessesMade === 1 ? '' : 'es'}` : 'No solve';
+    const detail = entry.won
+      ? formatElapsed(entry.elapsedSeconds)
+      : `${entry.greenCount || 0} green tiles`;
+    return `<div class="leaderboard-row">
+      <span class="leaderboard-rank">${index + 1}</span>
+      <span class="leaderboard-name">${escapeHtml(entry.name)}</span>
+      <span class="leaderboard-result">${result}<small>${detail}</small></span>
+    </div>`;
+  }).join('');
+}
+
+function formatElapsed(seconds) {
+  if (seconds == null) return '';
+  const minutes = Math.floor(seconds / 60);
+  const remaining = seconds % 60;
+  return minutes ? `${minutes}m ${remaining}s` : `${remaining}s`;
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>'"]/g, character => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+  }[character]));
 }
 
 function buildShareGrid() {
@@ -452,6 +632,11 @@ function playAgain() {
   gameOver = false;
   greenCount = 0;
   selectedAutocompleteIndex = -1;
+  gameStartTime = new Date();
+  activeDocRef = null;
+  activeDocReady = Promise.resolve();
+  scoreSubmitted = false;
+  createGameDocument();
 
   guessesGrid.innerHTML = '';
   profInput.value = '';
@@ -463,3 +648,8 @@ function playAgain() {
   showScreen(gameScreen);
   profInput.focus();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  initFirebase();
+  fetchLeaderboard('start-leaderboard-list');
+});

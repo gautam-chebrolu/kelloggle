@@ -640,6 +640,35 @@ body {
 
 .result-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 
+/* Leaderboard and optional player-name form */
+.leaderboard-section, .name-form-card {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  backdrop-filter: blur(12px);
+}
+.start-leaderboard { margin-top: -1rem; }
+.leaderboard-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.75rem; }
+.leaderboard-heading h2, .name-form-card h2 { font-size: 0.95rem; font-weight: 800; }
+.leaderboard-heading span { color: var(--text-3); font-size: 0.72rem; }
+.leaderboard-list { overflow: hidden; border: 1px solid var(--card-border); border-radius: var(--radius-sm); background: rgba(255,255,255,0.45); }
+.leaderboard-empty { padding: 1.2rem; text-align: center; color: var(--text-3); font-size: 0.85rem; }
+.leaderboard-row { display: grid; grid-template-columns: 2rem 1fr auto; gap: 0.65rem; align-items: center; padding: 0.7rem 0.75rem; border-bottom: 1px solid var(--card-border); }
+.leaderboard-row:last-child { border-bottom: 0; }
+.leaderboard-rank { color: var(--purple); font-weight: 800; text-align: center; }
+.leaderboard-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.9rem; font-weight: 700; }
+.leaderboard-result { color: var(--purple); font-size: 0.82rem; font-weight: 700; text-align: right; white-space: nowrap; }
+.leaderboard-result small { display: block; color: var(--text-3); font-size: 0.7rem; font-weight: 500; margin-top: 0.1rem; }
+.name-form-card { display: flex; flex-direction: column; gap: 0.7rem; }
+.name-input-row { display: flex; gap: 0.6rem; }
+.name-input { min-width: 0; flex: 1; padding: 0.65rem 0.8rem; border: 1px solid var(--card-border); border-radius: var(--radius-sm); background: white; font: inherit; }
+.name-input:focus { outline: 0; border-color: var(--purple-mid); box-shadow: 0 0 0 3px var(--purple-glow); }
+.btn-submit { padding: 0.65rem 1rem; }
+.submit-status { min-height: 1.1rem; font-size: 0.8rem; color: var(--text-3); }
+.submit-status.success { color: var(--correct); }.submit-status.error { color: var(--wrong); }.submit-status.saving { color: var(--text-2); }
+
 /* ══════════════════════════════════════
    TOAST
 ══════════════════════════════════════ */
@@ -712,4 +741,5 @@ body {
   .guess-row { grid-template-columns: 50px 110px repeat(8, var(--tile-size)); }
   .search-wrap { padding: 0.4rem 0.4rem 0.4rem 0.8rem; }
   .professor-input { font-size: 0.85rem; }
+  .name-input-row { flex-direction: column; }
 }
