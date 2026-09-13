@@ -6,8 +6,17 @@
 // ── Configuration ──
 const MAX_GUESSES = 10;
 const CLOSE_THRESHOLD = 3; // years within this range are "close" (yellow)
-const LEADERBOARD_COLLECTION = 'profguess';
+// Single-player sessions live in their own collection, mirroring BidTrivia's
+// split between `bidtrivia` (tournament, keyed by team code) and
+// `bidtrivia_leaderboard` (single player, keyed by game start time).
+// `profguess` remains the tournament collection — see tournament.html.
+const LEADERBOARD_COLLECTION = 'profguess_leaderboard';
 const LEADERBOARD_LIMIT = 10;
+
+// tournament.html / tbackup.html set this before loading game.js. In that mode
+// the tournament page owns the Firestore record (in the `profguess` collection,
+// keyed by team code), so game.js must not also write a leaderboard document.
+const TOURNAMENT_MODE = Boolean(window.PROFGUESS_TOURNAMENT_MODE);
 
 const REGULAR_PROFESSORS = PROFESSORS.filter(p => p.difficulty === 'regular');
 
@@ -21,7 +30,12 @@ let greenCount = 0;
 let db = null;
 let gameStartTime = null;
 let activeDocRef = null;
-let activeDocReady = Promise.resolve();
+// Resolves to true once the start-of-game document is confirmed written.
+// Never rejects — a failed create resolves false so callers can recover.
+let activeDocReady = Promise.resolve(false);
+// Resolves once the end-of-game write has settled, so a fast name submit
+// cannot land before (and be overwritten by) the completion payload.
+let activeDocFinal = Promise.resolve(false);
 let scoreSubmitted = false;
 
 function initFirebase() {
@@ -85,9 +99,13 @@ function getTargetProfessor(fallbackFn) {
   return fallbackFn();
 }
 
-function startGame() {
-  // Pick a random professor (or use daily seed)
-  targetProfessor = getTargetProfessor(pickDailyProfessor);
+/**
+ * Shared reset used by both startGame() and playAgain() so the two entry
+ * points can never drift apart — every new session resets the same state and
+ * opens exactly one Firestore document.
+ */
+function beginGame(fallbackFn) {
+  targetProfessor = getTargetProfessor(fallbackFn);
   guessCount = 0;
   guessedNames = [];
   gameOver = false;
@@ -95,7 +113,8 @@ function startGame() {
   selectedAutocompleteIndex = -1;
   gameStartTime = new Date();
   activeDocRef = null;
-  activeDocReady = Promise.resolve();
+  activeDocReady = Promise.resolve(false);
+  activeDocFinal = Promise.resolve(false);
   scoreSubmitted = false;
   createGameDocument();
 
@@ -111,6 +130,11 @@ function startGame() {
 
   showScreen(gameScreen);
   profInput.focus();
+}
+
+function startGame() {
+  // First game of the session uses the daily seed.
+  beginGame(pickDailyProfessor);
 }
 
 function pickDailyProfessor() {
@@ -438,55 +462,112 @@ function endGame(won) {
   // Build share grid
   buildShareGrid();
 
-  updateGameDocument(won);
   resetScoreForm();
   fetchLeaderboard('result-leaderboard-list');
+  // Refresh again once the completion write lands, so this game can appear.
+  updateGameDocument(won).then(ok => {
+    if (ok) fetchLeaderboard('result-leaderboard-list');
+  });
 
   showScreen(resultScreen);
 }
 
-/* Firestore game lifecycle: create on start, finish on result, name later. */
-async function createGameDocument() {
-  if (!db || !gameStartTime) return;
-  const ref = db.collection(LEADERBOARD_COLLECTION).doc(gameStartTime.toISOString());
-  activeDocRef = ref;
-  try {
-    activeDocReady = ref.set({
-      name: '',
-      status: 'in_progress',
-      won: null,
-      guessesMade: null,
-      greenCount: null,
-      elapsedSeconds: null,
-      targetProfessor: null,
-      startedAt: firebase.firestore.FieldValue.serverTimestamp(),
-      endedAt: null,
-    });
-    await activeDocReady;
-  } catch (error) {
-    console.warn('ProfGuess: could not create game document —', error.message);
-  }
+/* ═══════════════════════════════════════════════════
+   FIRESTORE GAME LIFECYCLE
+   Three steps, mirroring bidtrivia_leaderboard:
+     1. createGameDocument()  — at game start, all fields pre-initialised
+     2. updateGameDocument()  — at game end, final score data
+     3. handleSubmitScore()   — when the player submits a name
+   Every write uses set({ merge: true }) rather than update(), so a step still
+   lands even if an earlier step never reached the server. update() throws
+   not-found on a missing document, which previously discarded the entire
+   end-of-game payload whenever the start-of-game write had failed.
+   ═══════════════════════════════════════════════════ */
+
+/** The full field set every session document carries, so start and end writes stay aligned. */
+function blankSessionFields() {
+  return {
+    name: '',
+    status: 'in_progress',
+    won: null,
+    guessesMade: null,
+    greenCount: null,
+    elapsedSeconds: null,
+    targetProfessor: null,
+    startedAt: firebase.firestore.FieldValue.serverTimestamp(),
+    endedAt: null,
+  };
 }
 
-async function updateGameDocument(won) {
-  if (!db || !activeDocRef) return;
-  try {
-    await activeDocReady;
-    const elapsedSeconds = gameStartTime
-      ? Math.round((Date.now() - gameStartTime.getTime()) / 1000)
-      : null;
-    await activeDocRef.update({
+/** Stable document id for the current session: the game's start time. */
+function sessionDocRef() {
+  if (!db) return null;
+  const startedAt = gameStartTime || new Date();
+  return db.collection(LEADERBOARD_COLLECTION).doc(startedAt.toISOString());
+}
+
+async function createGameDocument() {
+  // In tournament mode the tournament page owns the record — don't double-write.
+  if (TOURNAMENT_MODE || !db || !gameStartTime) return;
+
+  const ref = sessionDocRef();
+  // Record the id up front so the end-of-game write targets the same document,
+  // but track separately whether the create actually succeeded.
+  activeDocRef = ref;
+  activeDocReady = ref.set(blankSessionFields())
+    .then(() => true)
+    .catch(error => {
+      console.warn('ProfGuess: could not create game document —', error.message);
+      return false;
+    });
+  return activeDocReady;
+}
+
+function updateGameDocument(won) {
+  if (TOURNAMENT_MODE || !db) return Promise.resolve(false);
+
+  // Elapsed time is captured now, synchronously, rather than after the create
+  // settles — otherwise a slow create would inflate the recorded duration.
+  const elapsedSeconds = gameStartTime
+    ? Math.round((Date.now() - gameStartTime.getTime()) / 1000)
+    : null;
+  const finalGuessCount = guessCount;
+  const finalGreenCount = greenCount;
+  const finalTarget = targetProfessor ? targetProfessor.name : null;
+
+  // Assigned synchronously so a fast name submit always awaits *this* write
+  // rather than the previous game's resolved promise.
+  activeDocFinal = (async () => {
+    // Wait for the create to settle so the two writes can't race, but proceed
+    // even if it failed — the merge below creates the document if needed.
+    const created = await activeDocReady;
+    const ref = activeDocRef || sessionDocRef();
+    if (!ref) return false;
+    activeDocRef = ref;
+
+    // If the start-of-game write never landed, backfill the fields it would
+    // have set so the document is complete rather than partial.
+    const payload = {
+      ...(created ? {} : { name: '', startedAt: gameStartTime || null }),
       status: 'completed',
       won,
-      guessesMade: guessCount,
-      greenCount,
+      guessesMade: finalGuessCount,
+      greenCount: finalGreenCount,
       elapsedSeconds,
-      targetProfessor: targetProfessor ? targetProfessor.name : null,
+      targetProfessor: finalTarget,
       endedAt: firebase.firestore.FieldValue.serverTimestamp(),
-    });
-  } catch (error) {
-    console.warn('ProfGuess: could not update game document —', error.message);
-  }
+    };
+
+    try {
+      await ref.set(payload, { merge: true });
+      return true;
+    } catch (error) {
+      console.warn('ProfGuess: could not update game document —', error.message);
+      return false;
+    }
+  })();
+
+  return activeDocFinal;
 }
 
 function resetScoreForm() {
@@ -513,7 +594,7 @@ async function handleSubmitScore() {
     input.focus();
     return;
   }
-  if (!db || !activeDocRef) {
+  if (!db) {
     status.textContent = 'Leaderboard is unavailable for this game.';
     status.className = 'submit-status error';
     return;
@@ -523,8 +604,32 @@ async function handleSubmitScore() {
   status.textContent = 'Saving...';
   status.className = 'submit-status saving';
   try {
+    // Let the create and completion writes settle first, so this name isn't
+    // clobbered by a completion payload that lands afterwards.
     await activeDocReady;
-    await activeDocRef.update({ name });
+    const finalized = await activeDocFinal;
+
+    const ref = activeDocRef || sessionDocRef();
+    if (!ref) throw new Error('No Firestore reference for this game.');
+    activeDocRef = ref;
+
+    // If the earlier writes never landed, write the whole record now so the
+    // player's submission isn't lost (mirrors the bidtrivia fallback).
+    const payload = finalized ? { name } : {
+      name,
+      status: 'completed',
+      won: targetProfessor ? guessedNames.includes(targetProfessor.name) : null,
+      guessesMade: guessCount,
+      greenCount,
+      elapsedSeconds: gameStartTime
+        ? Math.round((Date.now() - gameStartTime.getTime()) / 1000)
+        : null,
+      targetProfessor: targetProfessor ? targetProfessor.name : null,
+      startedAt: gameStartTime || null,
+      endedAt: firebase.firestore.FieldValue.serverTimestamp(),
+    };
+
+    await ref.set(payload, { merge: true });
     scoreSubmitted = true;
     status.textContent = 'Saved to the leaderboard!';
     status.className = 'submit-status success';
@@ -546,9 +651,13 @@ async function fetchLeaderboard(listId) {
     return;
   }
   try {
-    const snapshot = await db.collection(LEADERBOARD_COLLECTION).get();
+    // Filter server-side on status (single-field equality — no composite index
+    // needed) so in-progress and abandoned sessions aren't downloaded at all.
+    const snapshot = await db.collection(LEADERBOARD_COLLECTION)
+      .where('status', '==', 'completed')
+      .get();
     const entries = snapshot.docs.map(doc => doc.data())
-      .filter(entry => entry.status === 'completed' && entry.name && typeof entry.guessesMade === 'number');
+      .filter(entry => entry.name && typeof entry.guessesMade === 'number');
     entries.sort((a, b) => {
       if (a.won !== b.won) return a.won ? -1 : 1;
       if (a.won) {
@@ -625,28 +734,8 @@ function copyShareText() {
 }
 
 function playAgain() {
-  // Pick a new random professor (not daily this time, unless overridden)
-  targetProfessor = getTargetProfessor(pickRandomProfessor);
-  guessCount = 0;
-  guessedNames = [];
-  gameOver = false;
-  greenCount = 0;
-  selectedAutocompleteIndex = -1;
-  gameStartTime = new Date();
-  activeDocRef = null;
-  activeDocReady = Promise.resolve();
-  scoreSubmitted = false;
-  createGameDocument();
-
-  guessesGrid.innerHTML = '';
-  profInput.value = '';
-  guessBtn.disabled = true;
-  autocomplete.classList.remove('visible');
-
-  renderPips();
-  updateCounter();
-  showScreen(gameScreen);
-  profInput.focus();
+  // Subsequent games pick a new random professor rather than the daily seed.
+  beginGame(pickRandomProfessor);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

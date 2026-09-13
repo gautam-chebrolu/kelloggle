@@ -1,10 +1,64 @@
 rules_version = '2';
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  Kellogg Mini Games — Firestore rules (project: kellogg-mini-games)
+//
+//  IMPORTANT: kellogg-bidtrivia/ and kellogg-profguess/ both deploy to this
+//  same Firebase project, and each has its own firebase.json pointing at its
+//  own firestore.rules. A deploy from EITHER repo replaces the rules for the
+//  WHOLE project. These two files must therefore be kept byte-identical and
+//  must cover every collection both games use.
+//
+//  Collection layout (same shape for both games):
+//    tournament/codes            — one-time team codes, shared by both games
+//    <game>/{teamCode}           — tournament sessions, keyed by team code
+//    <game>_leaderboard/{isoTs}  — single-player sessions, keyed by start time
+// ═══════════════════════════════════════════════════════════════════════════
+
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Public game: sessions are created at start, completed at the end, and
-    // optionally named afterwards. Deletion remains prohibited.
-    match /profguess/{docId} {
+
+    // ── Shared tournament code registry ──────────────────────────────────
+    // Read to validate a code, update to mark one as consumed. Codes are
+    // provisioned by the host in the console — clients may not add or remove.
+    match /tournament/{docId} {
+      allow read, update: if true;
+      allow create, delete: if false;
+    }
+
+    // ── BidTrivia ────────────────────────────────────────────────────────
+    // Tournament sessions, keyed by team code.
+    match /bidtrivia/{teamCode} {
       allow read, create, update: if true;
+      allow delete: if false;
+    }
+
+    // Public single-player leaderboard. Documents follow a three-step
+    // lifecycle: created at game start, patched at game end with the score,
+    // then patched again when the player submits a name. All three steps are
+    // client-side, so create and update must both be open. Delete never is.
+    match /bidtrivia_leaderboard/{docId} {
+      allow read, create, update: if true;
+      allow delete: if false;
+    }
+
+    // ── ProfGuess ────────────────────────────────────────────────────────
+    // Tournament sessions, keyed by team code.
+    match /profguess/{teamCode} {
+      allow read, create, update: if true;
+      allow delete: if false;
+    }
+
+    // Public single-player leaderboard — same three-step lifecycle as
+    // bidtrivia_leaderboard above.
+    match /profguess_leaderboard/{docId} {
+      allow read, create, update: if true;
+      allow delete: if false;
+    }
+
+    // ── Default: deny everything else ────────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }

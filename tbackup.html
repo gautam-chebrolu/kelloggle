@@ -180,6 +180,9 @@
   <script>
     // Hardcode target for tournament
     window.TEST_PROFESSOR_NAME = "Timothy Calkins";
+    // This page owns the Firestore record (profguess/{teamCode}); tell game.js
+    // not to also open a profguess_leaderboard document for the same session.
+    window.PROFGUESS_TOURNAMENT_MODE = true;
   </script>
   <script src="professors.js"></script>
   <script src="game.js"></script>

@@ -439,6 +439,9 @@
   <script>
     // Hardcode target for tournament
     window.TEST_PROFESSOR_NAME = "Timothy Calkins";
+    // This page owns the Firestore record (profguess/{teamCode}); tell game.js
+    // not to also open a profguess_leaderboard document for the same session.
+    window.PROFGUESS_TOURNAMENT_MODE = true;
   </script>
   <script src="professors.js"></script>
   <script src="game.js"></script>
@@ -623,25 +626,20 @@
 
   <!--
   ═══════════════════════════════════════════════════════════════
-  RECOMMENDED FIRESTORE SECURITY RULES
-  (paste into Firebase console → Firestore → Rules)
+  FIRESTORE SECURITY RULES
   ═══════════════════════════════════════════════════════════════
 
-  rules_version = '2';
-  service cloud.firestore {
-    match /databases/{database}/documents {
-      match /tournament/{doc} {
-        allow read, update: if true;
-        allow create, delete: if false;
-      }
-      match /profguess/{code} {
-        allow read, write: if true;
-      }
-      match /bidtrivia/{code} {
-        allow read, write: if true;
-      }
-    }
-  }
+  Do NOT paste rules from here. The authoritative copy lives in
+  firestore.rules, kept byte-identical in kellogg-profguess/ and
+  kellogg-bidtrivia/ because both deploy to the same Firebase project
+  (kellogg-mini-games) and a deploy from either repo replaces the rules for
+  the whole project. Edit firestore.rules, copy it to the other repo, then:
+
+      firebase deploy --only firestore:rules
+
+  Collections used by this page: tournament/codes (code validation) and
+  profguess/{teamCode} (this tournament session). Single-player games go to
+  profguess_leaderboard instead — see game.js.
   ═══════════════════════════════════════════════════════════════
   -->
 </body>
