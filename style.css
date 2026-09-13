@@ -244,6 +244,89 @@ body {
 }
 
 /* ══════════════════════════════════════
+   START SCREEN — MODE PICKER
+══════════════════════════════════════ */
+.mode-picker {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* A mode button is a full-width two-line variant of the shared button styles. */
+.btn-mode {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.85rem 1.4rem;
+  text-align: left;
+}
+.mode-btn-text { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
+.mode-btn-main { font-size: 1rem; font-weight: 700; }
+.mode-btn-sub { font-size: 0.74rem; font-weight: 500; opacity: 0.78; }
+
+/* Replaces the daily button once today's puzzle is done. */
+.daily-done {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+}
+.daily-done-head { font-size: 0.9rem; font-weight: 800; color: var(--text-1); }
+.daily-done-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--text-2);
+}
+.daily-done-stats strong { color: var(--purple); font-weight: 800; }
+.daily-done-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.btn-share-sm { padding: 0.45rem 0.9rem; font-size: 0.8rem; }
+.daily-next { font-size: 0.72rem; color: var(--text-3); }
+
+/* ══════════════════════════════════════
+   LEADERBOARD TABS
+══════════════════════════════════════ */
+.lb-tabs {
+  display: flex;
+  gap: 0.3rem;
+  margin-bottom: 0.7rem;
+  padding: 0.2rem;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.04);
+}
+.lb-tab {
+  flex: 1;
+  padding: 0.4rem 0.7rem;
+  border: 0;
+  border-radius: 50px;
+  background: transparent;
+  color: var(--text-3);
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.lb-tab:hover { color: var(--text-1); }
+.lb-tab.active {
+  background: white;
+  color: var(--purple);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ══════════════════════════════════════
    GAME SCREEN
 ══════════════════════════════════════ */
 #game-screen {

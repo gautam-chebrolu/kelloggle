@@ -42,15 +42,46 @@
         </div>
       </div>
 
-      <button id="start-btn" class="btn-primary" onclick="startGame()">
-        <span>Start Game</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
-      </button>
+      <!-- Mode picker: shared daily puzzle vs. endless free play -->
+      <div class="mode-picker">
+        <button id="daily-btn" class="btn-primary btn-mode" onclick="startDaily()">
+          <span class="mode-btn-text">
+            <span class="mode-btn-main">Play Today's Puzzle</span>
+            <span id="daily-sub" class="mode-btn-sub">Same professor for everyone</span>
+          </span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </button>
+
+        <!-- Shown instead of the button once today's puzzle is finished -->
+        <div id="daily-done" class="daily-done" style="display:none;">
+          <div class="daily-done-head">✅ Daily <span id="daily-done-num"></span> complete</div>
+          <div id="daily-done-stats" class="daily-done-stats"></div>
+          <div class="daily-done-foot">
+            <button id="daily-share-btn" class="btn-secondary btn-share-sm" onclick="shareStoredDaily()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+              Share
+            </button>
+            <span class="daily-next">New puzzle at midnight CT</span>
+          </div>
+        </div>
+
+        <button id="start-btn" class="btn-secondary btn-mode" onclick="startGame('free')">
+          <span class="mode-btn-text">
+            <span class="mode-btn-main">Free Play</span>
+            <span class="mode-btn-sub">Random professor · unlimited games</span>
+          </span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </button>
+      </div>
 
       <section class="leaderboard-section start-leaderboard" aria-labelledby="start-leaderboard-title">
         <div class="leaderboard-heading">
           <h2 id="start-leaderboard-title">Leaderboard</h2>
           <span>Fewest guesses wins</span>
+        </div>
+        <div class="lb-tabs" role="tablist">
+          <button id="start-lb-tab-today" class="lb-tab active" role="tab" aria-selected="true" onclick="switchStartLeaderboardTab('today')">Today</button>
+          <button id="start-lb-tab-alltime" class="lb-tab" role="tab" aria-selected="false" onclick="switchStartLeaderboardTab('alltime')">All Time</button>
         </div>
         <div id="start-leaderboard-list" class="leaderboard-list" aria-live="polite">
           <p class="leaderboard-empty">Loading scores...</p>
@@ -154,6 +185,10 @@
           <h2 id="result-leaderboard-title">Leaderboard</h2>
           <span>Fewest guesses wins</span>
         </div>
+        <div class="lb-tabs" role="tablist">
+          <button id="result-lb-tab-today" class="lb-tab active" role="tab" aria-selected="true" onclick="switchResultLeaderboardTab('today')">Today</button>
+          <button id="result-lb-tab-alltime" class="lb-tab" role="tab" aria-selected="false" onclick="switchResultLeaderboardTab('alltime')">All Time</button>
+        </div>
         <div id="result-leaderboard-list" class="leaderboard-list" aria-live="polite"></div>
       </section>
 
@@ -162,7 +197,7 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
           Share Result
         </button>
-        <button class="btn-secondary" onclick="playAgain()">Play Again</button>
+        <button id="play-again-btn" class="btn-secondary" onclick="playAgain()">Play Again</button>
       </div>
     </div>
   </div>

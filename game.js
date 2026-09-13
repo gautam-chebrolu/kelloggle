@@ -18,10 +18,27 @@ const LEADERBOARD_LIMIT = 10;
 // keyed by team code), so game.js must not also write a leaderboard document.
 const TOURNAMENT_MODE = Boolean(window.PROFGUESS_TOURNAMENT_MODE);
 
+// ── Daily puzzle settings ──
+// Everyone who visits on the same calendar day (in DAILY_TZ) gets the exact
+// same professor, derived by seeding a PRNG with the date. The pick is a
+// function of the date AND REGULAR_PROFESSORS — i.e. professors.js filtered by
+// difficulty. Don't regenerate professors.js or re-label a professor's
+// difficulty mid-day, or the puzzle changes underneath players mid-game.
+const DAILY_TZ = 'America/Chicago';
+const DAILY_EPOCH = '2026-09-12';        // puzzle #1 — the day the daily launched
+const LS_DAILY_PREFIX = 'profguess_daily_';  // + YYYY-MM-DD → today's result
+// Distinct from BidTrivia's 'bidtrivia-' so the two games' daily picks aren't
+// drawn from the same underlying random stream.
+const DAILY_SEED_PREFIX = 'profguess-';
+
 const REGULAR_PROFESSORS = PROFESSORS.filter(p => p.difficulty === 'regular');
 
 // ── State ──
 let targetProfessor = null;
+// 'free' (random professor, all-time board) or 'daily' (seeded, Today board).
+let currentMode = 'free';
+let currentPuzzleDate = null;    // 'YYYY-MM-DD' in DAILY_TZ — daily mode only
+let currentPuzzleNumber = null;  // sequential #, daily mode only
 let guessCount = 0;
 let guessedNames = [];
 let gameOver = false;
@@ -49,6 +66,103 @@ function initFirebase() {
   } catch (error) {
     console.warn('ProfGuess: Firebase initialization failed —', error.message);
   }
+}
+
+/* ═══════════════════════════════════════════════════
+   DAILY PUZZLE
+   Kept byte-identical to the BidTrivia implementation where possible
+   (kellogg-bidtrivia/game.js:352–445) so a fix in one game can be pasted
+   straight into the other. Only the storage/seed prefixes differ.
+   ═══════════════════════════════════════════════════ */
+
+/**
+ * Today's puzzle date as YYYY-MM-DD, always in DAILY_TZ.
+ * The fixed timezone is the whole point: if we used the visitor's local clock,
+ * players in different zones would be on different puzzles at the same moment.
+ */
+function getPuzzleDate(d = new Date()) {
+  try {
+    // 'en-CA' formats as YYYY-MM-DD, which is exactly the key we want.
+    return new Intl.DateTimeFormat('en-CA', {
+      timeZone: DAILY_TZ,
+      year: 'numeric', month: '2-digit', day: '2-digit',
+    }).format(d);
+  } catch (_) {
+    // Intl or the tz database is unavailable — fall back to local date.
+    const pad = n => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }
+}
+
+/** Sequential puzzle number since DAILY_EPOCH — "Daily #47". */
+function getPuzzleNumber(puzzleDate = getPuzzleDate()) {
+  const toUTC = s => {
+    const [y, m, d] = s.split('-').map(Number);
+    return Date.UTC(y, m - 1, d);
+  };
+  const days = Math.round((toUTC(puzzleDate) - toUTC(DAILY_EPOCH)) / 86400000);
+  return days + 1;
+}
+
+/** Deterministic 32-bit seed from an arbitrary string (FNV-1a). */
+function hashSeed(str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+/** mulberry32 — small, fast, well-distributed seeded PRNG. */
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function () {
+    a = (a + 0x6D2B79F5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/* ── Daily completion record (localStorage) ── */
+
+function dailyKey(puzzleDate) {
+  return LS_DAILY_PREFIX + puzzleDate;
+}
+
+/** Today's stored result, or null if they haven't finished today's puzzle. */
+function getDailyResult(puzzleDate = getPuzzleDate()) {
+  try {
+    const raw = localStorage.getItem(dailyKey(puzzleDate));
+    return raw ? JSON.parse(raw) : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+function saveDailyResult(puzzleDate, result) {
+  try {
+    localStorage.setItem(dailyKey(puzzleDate), JSON.stringify(result));
+  } catch (_) { /* storage full or blocked — the lock just won't stick */ }
+}
+
+/** Drop daily records older than 30 days so localStorage doesn't grow forever. */
+function pruneDailyResults() {
+  try {
+    const cutoff = Date.now() - 30 * 86400000;
+    const stale = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (!key || !key.startsWith(LS_DAILY_PREFIX)) continue;
+      const datePart = key.slice(LS_DAILY_PREFIX.length);
+      const [y, m, d] = datePart.split('-').map(Number);
+      if (!y || !m || !d) continue;
+      if (Date.UTC(y, m - 1, d) < cutoff) stale.push(key);
+    }
+    stale.forEach(k => localStorage.removeItem(k));
+  } catch (_) { /* non-critical */ }
 }
 
 // ── Attribute keys (order matters — matches grid columns) ──
@@ -89,23 +203,41 @@ function showScreen(screen) {
 //  GAME INIT
 // ══════════════════════════════════════
 
-function getTargetProfessor(fallbackFn) {
+/**
+ * A professor forced via ?target=Some%20Name or window.TEST_PROFESSOR_NAME,
+ * or null when no override is active. A forced game is never the shared daily
+ * puzzle, so callers downgrade it to free play.
+ */
+function getOverrideProfessor() {
   const params = new URLSearchParams(window.location.search);
   const targetName = params.get('target') || window.TEST_PROFESSOR_NAME;
   if (targetName) {
     const prof = PROFESSORS.find(p => p.name.toLowerCase() === targetName.toLowerCase());
     if (prof) return prof;
   }
-  return fallbackFn();
+  return null;
 }
 
 /**
- * Shared reset used by both startGame() and playAgain() so the two entry
+ * Shared reset used by startGame(), startDaily() and playAgain() so the entry
  * points can never drift apart — every new session resets the same state and
  * opens exactly one Firestore document.
+ *
+ * `mode` is only honoured as 'daily' outside tournament play and with no
+ * ?target= override: tournament pages call window.startGame() with no
+ * arguments and must never hit the daily lock, and a forced professor isn't
+ * the puzzle everyone else is playing.
  */
-function beginGame(fallbackFn) {
-  targetProfessor = getTargetProfessor(fallbackFn);
+function beginGame(mode = 'free') {
+  const override = getOverrideProfessor();
+  const isDaily = mode === 'daily' && !TOURNAMENT_MODE && !override;
+
+  currentMode = isDaily ? 'daily' : 'free';
+  currentPuzzleDate = isDaily ? getPuzzleDate() : null;
+  currentPuzzleNumber = isDaily ? getPuzzleNumber(currentPuzzleDate) : null;
+
+  targetProfessor = override
+    || (isDaily ? pickDailyProfessor(currentPuzzleDate) : pickRandomProfessor());
   guessCount = 0;
   guessedNames = [];
   gameOver = false;
@@ -132,22 +264,29 @@ function beginGame(fallbackFn) {
   profInput.focus();
 }
 
-function startGame() {
-  // First game of the session uses the daily seed.
-  beginGame(pickDailyProfessor);
+/**
+ * Free play by default. tournament.html / tbackup.html monkey-patch
+ * window.startGame and call it with no arguments, so the no-arg call must keep
+ * meaning "a normal, unlocked game".
+ */
+function startGame(mode = 'free') {
+  beginGame(mode);
 }
 
-function pickDailyProfessor() {
-  // Use the date as a seed so everyone gets the same professor each day
-  const today = new Date();
-  const dateStr = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
-  let hash = 0;
-  for (let i = 0; i < dateStr.length; i++) {
-    hash = ((hash << 5) - hash) + dateStr.charCodeAt(i);
-    hash |= 0;
+/** Entry point for the daily button — refuses a second run on the same day. */
+function startDaily() {
+  if (getDailyResult()) {
+    showToast('You already played today — new puzzle at midnight CT.', 'info');
+    updateDailyPanel();
+    return;
   }
-  const idx = Math.abs(hash) % REGULAR_PROFESSORS.length;
-  return REGULAR_PROFESSORS[idx];
+  beginGame('daily');
+}
+
+/** The professor everyone playing on `puzzleDate` gets. Pure function of the date. */
+function pickDailyProfessor(puzzleDate = getPuzzleDate()) {
+  const rng = mulberry32(hashSeed(DAILY_SEED_PREFIX + puzzleDate));
+  return REGULAR_PROFESSORS[Math.floor(rng() * REGULAR_PROFESSORS.length)];
 }
 
 function pickRandomProfessor() {
@@ -427,14 +566,18 @@ function endGame(won) {
   const resultGuesses=$('result-guesses');
   const resultGreens= $('result-greens');
 
+  const isDaily = currentMode === 'daily';
+
   if (won) {
     resultEmoji.textContent = '🎉';
-    resultTitle.textContent = 'You Got It!';
+    resultTitle.textContent = isDaily ? `Daily #${currentPuzzleNumber} — Solved!` : 'You Got It!';
     resultSub.textContent = `You guessed correctly in ${guessCount} ${guessCount === 1 ? 'try' : 'tries'}!`;
     showToast('🎉 Correct!', 'correct', 1500);
   } else {
     resultEmoji.textContent = '😔';
-    resultTitle.textContent = 'Better Luck Next Time';
+    resultTitle.textContent = isDaily
+      ? `Daily #${currentPuzzleNumber} — Better Luck Tomorrow`
+      : 'Better Luck Next Time';
     resultSub.textContent = `The answer was ${targetProfessor.name}`;
   }
 
@@ -460,13 +603,38 @@ function endGame(won) {
   resultGreens.textContent = greenCount;
 
   // Build share grid
-  buildShareGrid();
+  const shareText = buildShareGrid(won);
+
+  // ── Daily lock: record today's result so the puzzle can't be replayed ──
+  if (isDaily) {
+    saveDailyResult(currentPuzzleDate, {
+      puzzleNumber: currentPuzzleNumber,
+      won,
+      guessesMade: guessCount,
+      greenCount,
+      elapsedSeconds: gameStartTime
+        ? Math.round((Date.now() - gameStartTime.getTime()) / 1000)
+        : null,
+      professor: targetProfessor.name,
+      shareText,
+      completedAt: new Date().toISOString(),
+    });
+    updateDailyPanel();
+  }
+
+  // After a daily, "Play Again" can only mean free play — the daily is spent.
+  const playAgainBtn = $('play-again-btn');
+  if (playAgainBtn) playAgainBtn.textContent = isDaily ? 'Free Play' : 'Play Again';
 
   resetScoreForm();
-  fetchLeaderboard('result-leaderboard-list');
+
+  // A daily game lands on the Today board; free play on the all-time board.
+  resultLbPeriod = isDaily ? 'today' : 'alltime';
+  setActiveTabIn('result-lb-tab-', resultLbPeriod);
+  fetchLeaderboard(resultLbPeriod, 'result-leaderboard-list');
   // Refresh again once the completion write lands, so this game can appear.
   updateGameDocument(won).then(ok => {
-    if (ok) fetchLeaderboard('result-leaderboard-list');
+    if (ok) fetchLeaderboard(resultLbPeriod, 'result-leaderboard-list');
   });
 
   showScreen(resultScreen);
@@ -494,6 +662,8 @@ function blankSessionFields() {
     greenCount: null,
     elapsedSeconds: null,
     targetProfessor: null,
+    mode: currentMode,
+    puzzleDate: currentPuzzleDate,   // null for free play
     startedAt: firebase.firestore.FieldValue.serverTimestamp(),
     endedAt: null,
   };
@@ -534,6 +704,8 @@ function updateGameDocument(won) {
   const finalGuessCount = guessCount;
   const finalGreenCount = greenCount;
   const finalTarget = targetProfessor ? targetProfessor.name : null;
+  const finalMode = currentMode;
+  const finalPuzzleDate = currentPuzzleDate;
 
   // Assigned synchronously so a fast name submit always awaits *this* write
   // rather than the previous game's resolved promise.
@@ -555,6 +727,10 @@ function updateGameDocument(won) {
       greenCount: finalGreenCount,
       elapsedSeconds,
       targetProfessor: finalTarget,
+      // Re-stated (not just backfilled) so the document's mode always matches
+      // the game that actually finished, even if the create write was lost.
+      mode: finalMode,
+      puzzleDate: finalPuzzleDate,
       endedAt: firebase.firestore.FieldValue.serverTimestamp(),
     };
 
@@ -625,6 +801,8 @@ async function handleSubmitScore() {
         ? Math.round((Date.now() - gameStartTime.getTime()) / 1000)
         : null,
       targetProfessor: targetProfessor ? targetProfessor.name : null,
+      mode: currentMode,
+      puzzleDate: currentPuzzleDate,
       startedAt: gameStartTime || null,
       endedAt: firebase.firestore.FieldValue.serverTimestamp(),
     };
@@ -633,7 +811,7 @@ async function handleSubmitScore() {
     scoreSubmitted = true;
     status.textContent = 'Saved to the leaderboard!';
     status.className = 'submit-status success';
-    fetchLeaderboard('result-leaderboard-list');
+    fetchLeaderboard(resultLbPeriod, 'result-leaderboard-list');
   } catch (error) {
     console.error('ProfGuess: could not save name', error);
     status.textContent = 'Could not save — please try again.';
@@ -643,7 +821,26 @@ async function handleSubmitScore() {
   }
 }
 
-async function fetchLeaderboard(listId) {
+/**
+ * Rank two finished games: solved before unsolved → fewest guesses → most
+ * green tiles → fastest time. Shared by both boards so the Today board and the
+ * all-time board never rank the same two games differently.
+ */
+function compareEntries(a, b) {
+  if (a.won !== b.won) return a.won ? -1 : 1;
+  if (a.won) {
+    if (a.guessesMade !== b.guessesMade) return a.guessesMade - b.guessesMade;
+  } else if (a.greenCount !== b.greenCount) {
+    return (b.greenCount || 0) - (a.greenCount || 0);
+  }
+  return (a.elapsedSeconds ?? Infinity) - (b.elapsedSeconds ?? Infinity);
+}
+
+/**
+ * @param period 'today' — games played on today's daily puzzle
+ *               'alltime' — free play (plus legacy rows), all time
+ */
+async function fetchLeaderboard(period, listId) {
   const list = $(listId);
   if (!list) return;
   if (!db) {
@@ -651,32 +848,78 @@ async function fetchLeaderboard(listId) {
     return;
   }
   try {
-    // Filter server-side on status (single-field equality — no composite index
-    // needed) so in-progress and abandoned sessions aren't downloaded at all.
-    const snapshot = await db.collection(LEADERBOARD_COLLECTION)
-      .where('status', '==', 'completed')
-      .get();
-    const entries = snapshot.docs.map(doc => doc.data())
+    // Both branches use a single equality filter, which Firestore's automatic
+    // single-field index covers — stacking two would need a composite index.
+    // The other condition is applied client-side below.
+    const query = period === 'today'
+      ? db.collection(LEADERBOARD_COLLECTION).where('puzzleDate', '==', getPuzzleDate())
+      : db.collection(LEADERBOARD_COLLECTION).where('status', '==', 'completed');
+
+    const snapshot = await query.get();
+    let entries = snapshot.docs.map(doc => doc.data())
+      .filter(entry => entry.status === 'completed')
       .filter(entry => entry.name && typeof entry.guessesMade === 'number');
-    entries.sort((a, b) => {
-      if (a.won !== b.won) return a.won ? -1 : 1;
-      if (a.won) {
-        if (a.guessesMade !== b.guessesMade) return a.guessesMade - b.guessesMade;
-      } else if (a.greenCount !== b.greenCount) {
-        return (b.greenCount || 0) - (a.greenCount || 0);
-      }
-      return (a.elapsedSeconds ?? Infinity) - (b.elapsedSeconds ?? Infinity);
-    });
-    renderLeaderboard(entries.slice(0, LEADERBOARD_LIMIT), list);
+
+    if (period === 'today') {
+      // The replay lock is client-side only, so someone clearing storage can
+      // submit twice. Keep each person's best row so one player can't fill the
+      // board — sort first, then take the first row seen per name.
+      entries.sort(compareEntries);
+      const bestByName = new Map();
+      entries.forEach(entry => {
+        const key = entry.name.toLowerCase().trim();
+        if (!bestByName.has(key)) bestByName.set(key, entry);
+      });
+      entries = Array.from(bestByName.values());
+    } else {
+      // Daily results stay off the free-play board: the daily is one fair shot
+      // at a shared professor. Legacy documents predate the `mode` field —
+      // treat a missing mode as free play so old scores keep showing.
+      entries = entries.filter(entry => entry.mode !== 'daily');
+    }
+
+    entries.sort(compareEntries);
+    renderLeaderboard(entries.slice(0, LEADERBOARD_LIMIT), list, period);
   } catch (error) {
     console.warn('ProfGuess: could not load leaderboard —', error.message);
     list.innerHTML = '<p class="leaderboard-empty">Could not load scores. Please try again shortly.</p>';
   }
 }
 
-function renderLeaderboard(entries, list) {
+/* ── Leaderboard tabs ── */
+
+const LB_PERIODS = ['today', 'alltime'];
+let startLbPeriod = 'today';
+let resultLbPeriod = 'today';
+
+/** Highlight the selected tab in a strip ('start-lb-tab-' or 'result-lb-tab-'). */
+function setActiveTabIn(prefix, period) {
+  LB_PERIODS.forEach(p => {
+    const el = $(prefix + p);
+    if (!el) return;
+    el.classList.toggle('active', p === period);
+    el.setAttribute('aria-selected', String(p === period));
+  });
+}
+
+function switchStartLeaderboardTab(period) {
+  if (period === startLbPeriod) return;
+  startLbPeriod = period;
+  setActiveTabIn('start-lb-tab-', period);
+  fetchLeaderboard(period, 'start-leaderboard-list');
+}
+
+function switchResultLeaderboardTab(period) {
+  if (period === resultLbPeriod) return;
+  resultLbPeriod = period;
+  setActiveTabIn('result-lb-tab-', period);
+  fetchLeaderboard(period, 'result-leaderboard-list');
+}
+
+function renderLeaderboard(entries, list, period = 'alltime') {
   if (!entries.length) {
-    list.innerHTML = '<p class="leaderboard-empty">No named games yet — be the first!</p>';
+    const where = period === 'today' ? "on today's puzzle yet" : 'yet';
+    list.innerHTML = `<p class="leaderboard-empty">No named games ${where} — be the first!</p>`;
     return;
   }
   list.innerHTML = entries.map((entry, index) => {
@@ -705,10 +948,19 @@ function escapeHtml(value) {
   }[character]));
 }
 
-function buildShareGrid() {
+/**
+ * Build the shareable summary and drop it into the result screen. The puzzle
+ * number is what lets people compare a daily in a group chat; an unsolved game
+ * scores X/10, Wordle-style.
+ */
+function buildShareGrid(won) {
   const shareGrid = $('result-share-grid');
-  let lines = [`ProfGuess ${guessCount}/${MAX_GUESSES}\n`];
-  
+  const score = `${won ? guessCount : 'X'}/${MAX_GUESSES}`;
+  const header = currentMode === 'daily'
+    ? `Kelloggle Daily #${currentPuzzleNumber} — ${score}`
+    : `Kelloggle ${score}`;
+  let lines = [`${header}\n`];
+
   const rows = guessesGrid.querySelectorAll('.guess-row');
   rows.forEach(row => {
     let line = '';
@@ -721,24 +973,87 @@ function buildShareGrid() {
     lines.push(line);
   });
 
-  shareGrid.textContent = lines.join('\n');
+  const text = lines.join('\n');
+  shareGrid.textContent = text;
+  return text;
 }
 
-function copyShareText() {
-  const shareGrid = $('result-share-grid');
-  navigator.clipboard.writeText(shareGrid.textContent).then(() => {
+/** Native share sheet on mobile, clipboard everywhere else. */
+function copyText(text) {
+  if (navigator.share && /Mobi|Android/i.test(navigator.userAgent)) {
+    return navigator.share({ text }).catch(error => {
+      if (error && error.name === 'AbortError') return;   // user cancelled
+      return writeClipboard(text);
+    });
+  }
+  return writeClipboard(text);
+}
+
+function writeClipboard(text) {
+  return navigator.clipboard.writeText(text).then(() => {
     showToast('Copied to clipboard!', 'correct');
   }).catch(() => {
     showToast('Could not copy', 'wrong');
   });
 }
 
+function copyShareText() {
+  copyText($('result-share-grid').textContent);
+}
+
 function playAgain() {
-  // Subsequent games pick a new random professor rather than the daily seed.
-  beginGame(pickRandomProfessor);
+  // After a daily, "Play Again" can only mean free play — the daily is spent.
+  beginGame('free');
+}
+
+/* ═══════════════════════════════════════════════════
+   START SCREEN — DAILY PANEL
+   ═══════════════════════════════════════════════════ */
+
+/**
+ * Swap the daily button between "play" and "already played today" states.
+ * The lock is localStorage-only (same as Wordle) — clearing storage or using a
+ * private window gets around it. That's an accepted trade for not needing
+ * accounts; the Today board deduplicates by name to blunt the rest.
+ */
+function updateDailyPanel() {
+  if (TOURNAMENT_MODE) return;
+  const btn = $('daily-btn');
+  const done = $('daily-done');
+  if (!btn || !done) return;   // test.html / tournament.html have no mode picker
+
+  const puzzleDate = getPuzzleDate();
+  const num = getPuzzleNumber(puzzleDate);
+  const result = getDailyResult(puzzleDate);
+
+  const subEl = $('daily-sub');
+  if (subEl) subEl.textContent = `#${num} · same professor for everyone`;
+
+  if (!result) {
+    btn.style.display = '';
+    done.style.display = 'none';
+    return;
+  }
+
+  btn.style.display = 'none';
+  done.style.display = '';
+  $('daily-done-num').textContent = `#${result.puzzleNumber ?? num}`;
+  $('daily-done-stats').innerHTML = `
+    <span><strong>${result.won ? result.guessesMade : 'X'}</strong>/${MAX_GUESSES} guesses</span>
+    <span>🟩 ${result.greenCount ?? 0}</span>
+    <span>${formatElapsed(result.elapsedSeconds) || '—'}</span>`;
+}
+
+/** Re-share today's stored daily result from the start screen. */
+function shareStoredDaily() {
+  const result = getDailyResult();
+  if (!result || !result.shareText) return;
+  copyText(result.shareText);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   initFirebase();
-  fetchLeaderboard('start-leaderboard-list');
+  pruneDailyResults();
+  updateDailyPanel();
+  fetchLeaderboard(startLbPeriod, 'start-leaderboard-list');
 });

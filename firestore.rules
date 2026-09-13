@@ -3,16 +3,18 @@ rules_version = '2';
 // ═══════════════════════════════════════════════════════════════════════════
 //  Kellogg Mini Games — Firestore rules (project: kellogg-mini-games)
 //
-//  IMPORTANT: kellogg-bidtrivia/ and kellogg-profguess/ both deploy to this
-//  same Firebase project, and each has its own firebase.json pointing at its
-//  own firestore.rules. A deploy from EITHER repo replaces the rules for the
-//  WHOLE project. These two files must therefore be kept byte-identical and
-//  must cover every collection both games use.
+//  IMPORTANT: kellogg-bidtrivia/, kellogg-profguess/, and kellogg-geoguessr/
+//  all deploy to this same Firebase project, and each has its own
+//  firebase.json pointing at its own firestore.rules. A deploy from ANY repo
+//  replaces the rules for the WHOLE project. These files must therefore be
+//  kept in sync and must cover every collection all games use.
 //
-//  Collection layout (same shape for both games):
-//    tournament/codes            — one-time team codes, shared by both games
+//  Collection layout (same shape for all games):
+//    tournament/codes            — one-time team codes, shared by all games
 //    <game>/{teamCode}           — tournament sessions, keyed by team code
 //    <game>_leaderboard/{isoTs}  — single-player sessions, keyed by start time
+//    geoguessr_rounds/{roundId}  — geoguessr round data (photos, answers)
+//    geoguessr_analytics/{docId} — geoguessr usage analytics
 // ═══════════════════════════════════════════════════════════════════════════
 
 service cloud.firestore {
@@ -52,6 +54,25 @@ service cloud.firestore {
     // Public single-player leaderboard — same three-step lifecycle as
     // bidtrivia_leaderboard above.
     match /profguess_leaderboard/{docId} {
+      allow read, create, update: if true;
+      allow delete: if false;
+    }
+
+    // ── GeoGuessr ────────────────────────────────────────────────────────
+    // Round definitions — created/updated by the editor, read by the game.
+    match /geoguessr_rounds/{roundId} {
+      allow read, create, update: if true;
+      allow delete: if true;
+    }
+
+    // Public single-player leaderboard — same lifecycle as other games.
+    match /geoguessr_leaderboard/{docId} {
+      allow read, create, update: if true;
+      allow delete: if false;
+    }
+
+    // Usage analytics — game sessions logged by the client.
+    match /geoguessr_analytics/{docId} {
       allow read, create, update: if true;
       allow delete: if false;
     }
