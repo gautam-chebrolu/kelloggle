@@ -662,6 +662,7 @@ function blankSessionFields() {
     greenCount: null,
     elapsedSeconds: null,
     targetProfessor: null,
+    profsGuessed: [],
     mode: currentMode,
     puzzleDate: currentPuzzleDate,   // null for free play
     startedAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -727,6 +728,7 @@ function updateGameDocument(won) {
       greenCount: finalGreenCount,
       elapsedSeconds,
       targetProfessor: finalTarget,
+      profsGuessed: [...guessedNames],
       // Re-stated (not just backfilled) so the document's mode always matches
       // the game that actually finished, even if the create write was lost.
       mode: finalMode,
@@ -801,6 +803,7 @@ async function handleSubmitScore() {
         ? Math.round((Date.now() - gameStartTime.getTime()) / 1000)
         : null,
       targetProfessor: targetProfessor ? targetProfessor.name : null,
+      profsGuessed: [...guessedNames],
       mode: currentMode,
       puzzleDate: currentPuzzleDate,
       startedAt: gameStartTime || null,
