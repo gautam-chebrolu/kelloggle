@@ -58,6 +58,14 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+    // Daily puzzle overrides — documents keyed by date (YYYY-MM-DD), each
+    // containing { answer: "Professor Name" }.  Clients read to discover
+    // today's professor; only the admin (console / service account) writes.
+    match /profguess_dailies/{dateId} {
+      allow read: if true;
+      allow create, update, delete: if false;
+    }
+
     // ── GeoGuessr ────────────────────────────────────────────────────────
     // Round definitions — created/updated by the editor, read by the game.
     match /geoguessr_rounds/{roundId} {

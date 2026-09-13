@@ -11,6 +11,7 @@ const CLOSE_THRESHOLD = 3; // years within this range are "close" (yellow)
 // `bidtrivia_leaderboard` (single player, keyed by game start time).
 // `profguess` remains the tournament collection — see tournament.html.
 const LEADERBOARD_COLLECTION = 'profguess_leaderboard';
+const DAILIES_COLLECTION = 'profguess_dailies';
 const LEADERBOARD_LIMIT = 10;
 
 // tournament.html / tbackup.html set this before loading game.js. In that mode
@@ -228,7 +229,7 @@ function getOverrideProfessor() {
  * arguments and must never hit the daily lock, and a forced professor isn't
  * the puzzle everyone else is playing.
  */
-function beginGame(mode = 'free') {
+async function beginGame(mode = 'free') {
   const override = getOverrideProfessor();
   const isDaily = mode === 'daily' && !TOURNAMENT_MODE && !override;
 
@@ -237,7 +238,7 @@ function beginGame(mode = 'free') {
   currentPuzzleNumber = isDaily ? getPuzzleNumber(currentPuzzleDate) : null;
 
   targetProfessor = override
-    || (isDaily ? pickDailyProfessor(currentPuzzleDate) : pickRandomProfessor());
+    || (isDaily ? await pickDailyProfessor(currentPuzzleDate) : pickRandomProfessor());
   guessCount = 0;
   guessedNames = [];
   gameOver = false;
@@ -269,22 +270,47 @@ function beginGame(mode = 'free') {
  * window.startGame and call it with no arguments, so the no-arg call must keep
  * meaning "a normal, unlocked game".
  */
-function startGame(mode = 'free') {
-  beginGame(mode);
+async function startGame(mode = 'free') {
+  await beginGame(mode);
 }
 
 /** Entry point for the daily button — refuses a second run on the same day. */
-function startDaily() {
+async function startDaily() {
   if (getDailyResult()) {
     showToast('You already played today — new puzzle at midnight CT.', 'info');
     updateDailyPanel();
     return;
   }
-  beginGame('daily');
+  await beginGame('daily');
 }
 
-/** The professor everyone playing on `puzzleDate` gets. Pure function of the date. */
-function pickDailyProfessor(puzzleDate = getPuzzleDate()) {
+/**
+ * The professor everyone playing on `puzzleDate` gets.
+ * Checks the profguess_dailies collection first for a manual override;
+ * falls back to the seeded PRNG if no document exists or Firestore is
+ * unavailable.
+ */
+async function pickDailyProfessor(puzzleDate = getPuzzleDate()) {
+  // Try Firestore override first
+  if (db) {
+    try {
+      const doc = await db.collection(DAILIES_COLLECTION).doc(puzzleDate).get();
+      if (doc.exists) {
+        const data = doc.data();
+        const name = data && data.answer;
+        if (name) {
+          const prof = PROFESSORS.find(
+            p => p.name.toLowerCase() === name.toLowerCase()
+          );
+          if (prof) return prof;
+          console.warn(`ProfGuess: daily override "${name}" not found in PROFESSORS — falling back to formula.`);
+        }
+      }
+    } catch (err) {
+      console.warn('ProfGuess: could not fetch daily override —', err.message);
+    }
+  }
+  // Deterministic fallback
   const rng = mulberry32(hashSeed(DAILY_SEED_PREFIX + puzzleDate));
   return REGULAR_PROFESSORS[Math.floor(rng() * REGULAR_PROFESSORS.length)];
 }
